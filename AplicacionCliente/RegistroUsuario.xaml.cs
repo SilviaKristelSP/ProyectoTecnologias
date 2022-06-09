@@ -15,26 +15,19 @@ using System.Windows.Shapes;
 namespace AplicacionCliente
 {
     /// <summary>
-    /// Lógica de interacción para InicioSesion.xaml
+    /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class InicioSesion : Window
+    public partial class RegistroUsuario : Window
     {
-        public InicioSesion()
+        public RegistroUsuario()
         {
             InitializeComponent();
         }
 
-        private void clicIniciar(object sender, RoutedEventArgs e)
+        private void clicGuardarDatos(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
-            paginaPrincipal.Show();
-            this.Close();
-        }
-
-        private void clicRegistrar(object sender, RoutedEventArgs e)
-        {
-            RegistroUsuario registroUsuario = new RegistroUsuario();
-            registroUsuario.Show();
+            InicioSesion inicioSesion = new InicioSesion();
+            inicioSesion.Show();
             this.Close();
         }
     }

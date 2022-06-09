@@ -1,0 +1,42 @@
+﻿<Window x:Class="AplicacionCliente.Perfil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionCliente"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Perfil" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Puntaje Global" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <Label Content="TOTAL" HorizontalAlignment="Left" Margin="342,0,0,0" VerticalAlignment="Center"/>
+            <Label Content="Partidas ganadas" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top"/>
+            <DataGrid Grid.Row="1" Margin="15, 15, 15, 30">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Usuario vencido" Width="*"/>
+                    <DataGridTextColumn Header="Fecha" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Label Content="Perfil" HorizontalAlignment="Left" Margin="382,1,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="24" FontWeight="Bold"/>
+        <Button Content="Editar datos" HorizontalAlignment="Left" Margin="264,384,0,0" VerticalAlignment="Top" Width="110" Grid.Column="0" Click="clicEditarDatos"/>
+        <Label Content="Datos del Usuario" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Content="Nombre Completo:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="36,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="36,229,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha Nacimiento:" HorizontalAlignment="Left" Margin="36,290,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="162,130,0,0" VerticalAlignment="Top" Width="212"/>
+        <Label Content="Correo" HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top" Width="212"/>
+        <Label Content="Telefono" HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Width="212"/>
+        <Label Content="fecha" HorizontalAlignment="Left" Margin="148,290,0,0" VerticalAlignment="Top" Width="196"/>
+    </Grid>
+</Window>

@@ -59,6 +59,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CreacionPartida.xaml.cs">
+      <DependentUpon>CreacionPartida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EdicionPerfil.xaml.cs">
+      <DependentUpon>EdicionPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaPrincipal.xaml.cs">
+      <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaAdivinador.xaml.cs">
+      <DependentUpon>PantallaAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaRetador.xaml.cs">
+      <DependentUpon>PantallaRetador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.xaml.cs">
+      <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuario.xaml.cs">
+      <DependentUpon>RegistroUsuario.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InicioSesion.xaml.cs">
@@ -90,10 +111,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CreacionPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EdicionPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InicioSesion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaginaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaRetador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Perfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Intento0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
