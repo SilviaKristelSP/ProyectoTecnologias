@@ -26,7 +26,7 @@ namespace AplicacionCliente
 
         private void clicIniciar(object sender, RoutedEventArgs e)
         {
-
+            //comentario
         }
 
         private void clicRegistrar(object sender, RoutedEventArgs e)
