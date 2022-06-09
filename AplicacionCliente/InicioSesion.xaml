@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AplicacionCliente"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="InicioSesion" Height="450" Width="800">
+    
     <Grid>
-        
+        <Button Content="Iniciar" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" FontSize="15" Width="150" Click="clicIniciar"/>
+        <TextBox HorizontalAlignment="Left" Margin="325,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Height="20"/>
+        <TextBox HorizontalAlignment="Left" Margin="351,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="20"/>
+        <Label Content="Inicio de Sesión" HorizontalAlignment="Left" Margin="312,43,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="261,209,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="261,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.051,0.032" FontSize="15"/>
+        <Button Content="¡Registrate aquí!" HorizontalAlignment="Left" Margin="637,372,0,0" VerticalAlignment="Top" Width="133" FontSize="15" Click="clicRegistrar"/>
+        <Label Content="¿No estás registrado?" HorizontalAlignment="Left" Margin="624,337,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" FontStyle="Italic"/>
     </Grid>
 </Window>

@@ -23,5 +23,15 @@ namespace AplicacionCliente
         {
             InitializeComponent();
         }
+
+        private void clicIniciar(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clicRegistrar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
