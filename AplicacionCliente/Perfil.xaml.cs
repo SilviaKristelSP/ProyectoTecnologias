@@ -15,26 +15,19 @@ using System.Windows.Shapes;
 namespace AplicacionCliente
 {
     /// <summary>
-    /// Lógica de interacción para InicioSesion.xaml
+    /// Lógica de interacción para Perfil.xaml
     /// </summary>
-    public partial class InicioSesion : Window
+    public partial class Perfil : Window
     {
-        public InicioSesion()
+        public Perfil()
         {
             InitializeComponent();
         }
 
-        private void clicIniciar(object sender, RoutedEventArgs e)
+        private void clicEditarDatos(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
-            paginaPrincipal.Show();
-            this.Close();
-        }
-
-        private void clicRegistrar(object sender, RoutedEventArgs e)
-        {
-            RegistroUsuario registroUsuario = new RegistroUsuario();
-            registroUsuario.Show();
+            EdicionPerfil edicionPerfil = new EdicionPerfil();
+            edicionPerfil.Show();
             this.Close();
         }
     }
