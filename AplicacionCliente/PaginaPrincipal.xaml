@@ -1,0 +1,30 @@
+﻿<Window x:Class="AplicacionCliente.PaginaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionCliente"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="PaginaPrincipal" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="¿Listo para jugar?" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Margin="0,1,0,0"/>
+        <Label Content="Partidas disponibles" HorizontalAlignment="Left" Margin="20,49,0,0" VerticalAlignment="Top" Height="26" Width="126"/>
+        <Button Content="Perfil" HorizontalAlignment="Left" Margin="664,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.5" Width="109" Grid.Row="0" Click="clicVerPerfil"/>
+        <Button Content="Nueva Partida" HorizontalAlignment="Left" Margin="664,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="109" Click="clicCreaNuevaPartida"/>
+        <DataGrid Grid.Row="1" Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Correo" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombre" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Fecha creación" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Entrar a Partida" HorizontalAlignment="Left" Margin="627,10,0,0" VerticalAlignment="Top" Grid.Row="0" Height="20" Width="146" Click="clicEntrarPartida"/>
+        <Button Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Grid.Row="0" Height="20" Width="99" Click="clicCerrarSesion"/>
+    </Grid>
+</Window>

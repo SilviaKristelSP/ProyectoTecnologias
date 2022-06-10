@@ -16,5 +16,15 @@ namespace ServicioJuegoAhorcado
         {
             return JugadorDAO.logear (correo, password);
         }
+
+        public Mensaje insertarJugador(Jugador jugadorRegistro)
+        {
+            return JugadorDAO.insertarJugador (jugadorRegistro);
+        }
+
+        public Mensaje editarJugador(Jugador jugadorRegistro)
+        {
+            return JugadorDAO.editarJugador(jugadorRegistro);
+        }
     }
 }

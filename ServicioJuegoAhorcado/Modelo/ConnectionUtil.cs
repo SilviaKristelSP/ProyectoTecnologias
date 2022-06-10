@@ -12,7 +12,7 @@ namespace ServicioJuegoAhorcado.Modelo
         private static string PUERTO = "3306";
         private static string BASE_DATOS = "ahorcado";
         private static string USUARIO_BD = "root";
-        private static string PASSWORD = "tecNO70-8w8*/1/-QJ+";
+        private static string PASSWORD = "Cateto3101";
 
         public static MySqlConnection obtenerConexion()
         {

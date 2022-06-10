@@ -15,5 +15,11 @@ namespace ServicioJuegoAhorcado
 
         [OperationContract]
         RespuestaLogin logear(String correo, String password);
+
+        [OperationContract]
+        Mensaje insertarJugador(Jugador jugadorRegistro);
+
+        [OperationContract]
+        Mensaje editarJugador(Jugador jugadorRegistro);
     }
 }
