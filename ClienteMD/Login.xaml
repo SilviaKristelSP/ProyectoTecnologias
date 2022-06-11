@@ -1,0 +1,108 @@
+﻿<Window x:Class="ClienteMD.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteMD"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Border Background="#1B2430" CornerRadius="20" MouseDown="moverVentana">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10
+                    " Background="#51557E">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <Image Source="/Imagenes/hangman.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill" Width="200" />
+                        <TextBlock Margin="0 50 0 0" FontFamily="Fuentes/#Roboto" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FFD6D5A8" TextWrapping="Wrap">JUEGO DEL AHORCADO</TextBlock>
+                        <Button Content="Registrarse" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickRegistrarse" Margin="0 30 0 0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                    <Setter Property="Background" Value="#816797"></Setter>
+                                    <Setter Property="Cursor" Value="Hand"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#1B2430"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Salir" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickSalir" Margin="0 10 0 0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                    <Setter Property="Background" Value="#816797"></Setter>
+                                    <Setter Property="Cursor" Value="Hand"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#1B2430"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Grid Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Foreground="#D6D5A8" FontSize="75" FontWeight="Bold" HorizontalAlignment="Center">
+                        LOGIN
+                    </TextBlock>
+                    <TextBox x:Name="Usuario" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 25 0 0" Style="{StaticResource TBTemaModerno}"></TextBox>
+                    <PasswordBox x:Name="Contraseña" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 25 0 0" Style="{StaticResource PBTemaModerno}"></PasswordBox>
+                    <Button Content="Ingresar" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickIngresar" Margin="0 30 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Margin="0 15 0 0" Source="/Imagenes/rope.png" Width="150" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
