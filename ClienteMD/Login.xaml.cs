@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteMD.Vistas;
+using System;
 using System.Windows;
 using System.Windows.Input;
 namespace ClienteMD
@@ -39,14 +40,17 @@ namespace ClienteMD
             }
             if (camposVacios == false)
             {
+                PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
                 this.Close();
-                //PaginaPrincipal.show();
+                paginaPrincipal.Show();
             }
         }
 
         private void clickRegistrarse(object sender, RoutedEventArgs e)
         {
-
+            RegistroUsuario registroUsuario = new RegistroUsuario();
+            this.Close();
+            registroUsuario.Show();
         }
     }
 }
