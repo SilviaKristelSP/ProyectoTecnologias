@@ -1,0 +1,20 @@
+﻿<Window x:Class="AplicacionCliente.EdicionPerfil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionCliente"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="EdicionPerfil" Height="324" Width="541">
+    <Grid>
+        <Label Content="Edición de perfil" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Nombre: " HorizontalAlignment="Left" Margin="87,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teléfono: " HorizontalAlignment="Left" Margin="87,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha nacimiento: " HorizontalAlignment="Left" Margin="87,189,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="152,75,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="321"/>
+        <TextBox HorizontalAlignment="Left" Margin="153,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321"/>
+        <DatePicker HorizontalAlignment="Left" Margin="201,191,0,0" VerticalAlignment="Top" Width="192"/>
+        <Button Content="Guardar datos" HorizontalAlignment="Left" Margin="335,253,0,0" VerticalAlignment="Top" Width="138" Click="clicGuardarDatos"/>
+    </Grid>
+</Window>

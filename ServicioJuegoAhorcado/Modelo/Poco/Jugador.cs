@@ -14,5 +14,7 @@ namespace ServicioJuegoAhorcado.Modelo.Poco
         public string Telefono { get; set; }
         public int PuntajeGlobal { get; set; }
         public string Email { get; set; }
+
+        public string Password { get; set; }
     }
 }

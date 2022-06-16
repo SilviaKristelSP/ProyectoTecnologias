@@ -26,12 +26,16 @@ namespace AplicacionCliente
 
         private void clicIniciar(object sender, RoutedEventArgs e)
         {
-
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            paginaPrincipal.Show();
+            this.Close();
         }
 
         private void clicRegistrar(object sender, RoutedEventArgs e)
         {
-
+            RegistroUsuario registroUsuario = new RegistroUsuario();
+            registroUsuario.Show();
+            this.Close();
         }
     }
 }

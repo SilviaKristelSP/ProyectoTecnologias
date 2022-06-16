@@ -1,0 +1,74 @@
+﻿<Window x:Class="AplicacionCliente.PantallaAdivinador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionCliente"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="PantallaAdivinador" Height="510" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Content="A" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top"/>
+            <Button Content="B" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+            <Button Content="C" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+            <Button Content="D" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+            <Button Content="E" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+            <Button Content="F" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+            <Button Content="G" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+            <Button Content="H" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+            <Button Content="I" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+            <Button Content="J" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="0" Grid.Column="9" VerticalAlignment="Top"/>
+            <Button Content="K" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top"/>
+            <Button Content="L" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"/>
+            <Button Content="M" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"/>
+            <Button Content="N" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"/>
+            <Button Content="Ñ" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"/>
+            <Button Content="O" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="5" VerticalAlignment="Top"/>
+            <Button Content="P" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="6" VerticalAlignment="Top"/>
+            <Button Content="Q" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="7" VerticalAlignment="Top"/>
+            <Button Content="R" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="8" VerticalAlignment="Top"/>
+            <Button Content="S" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="1" Grid.Column="9" VerticalAlignment="Top"/>
+            <Button Content="T" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"/>
+            <Button Content="U" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top"/>
+            <Button Content="V" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top"/>
+            <Button Content="W" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="4" VerticalAlignment="Top"/>
+            <Button Content="X" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="5" VerticalAlignment="Top"/>
+            <Button Content="Y" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="6" VerticalAlignment="Top"/>
+            <Button Content="Z" HorizontalAlignment="Left" Margin="25,5" Width="30" Height="30" Grid.Row="2" Grid.Column="7" VerticalAlignment="Top"/>
+            <Button Content="Abandonar partida" HorizontalAlignment="Left" Margin="25,0,0,0" Width="110" Height="30" Grid.Row="2" Grid.Column="8" VerticalAlignment="Center" Grid.ColumnSpan="2" Click="clicAbandonarPartida"/>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="180" Margin="298,8,0,0" VerticalAlignment="Top" Width="210" Grid.Row="1" Source="/Intento0.png"/>
+        <Label Content="Pista:" HorizontalAlignment="Left" Margin="28,37,0,0" VerticalAlignment="Top" Grid.Column="0"/>
+        <Label Content="Texto pista" HorizontalAlignment="Left" Margin="70,37,0,0" VerticalAlignment="Top" Width="455" Grid.Column="0"/>
+        <Label Content="Número de letras:" HorizontalAlignment="Left" Margin="612,37,0,0" VerticalAlignment="Top" Grid.Column="0"/>
+        <Label Content="#" HorizontalAlignment="Left" Margin="722,37,0,0" VerticalAlignment="Top" Grid.Column="0"/>
+        <Label Content="Intentos restantes" HorizontalAlignment="Left" Margin="612,8,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="#" HorizontalAlignment="Left" Margin="722,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.644,0.387" Grid.Row="1"/>
+        <WrapPanel Grid.Row="2" Margin="15"></WrapPanel>
+        <Label Content="Partida" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.644,0.387" Grid.Row="0" FontSize="24" FontWeight="Bold" Margin="0,-4,0,0"/>
+    </Grid>
+</Window>

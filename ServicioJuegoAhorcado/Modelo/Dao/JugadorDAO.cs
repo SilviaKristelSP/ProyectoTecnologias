@@ -64,5 +64,92 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
 
             return respuestaBD;
         }
+
+        public static Mensaje insertarJugador(Jugador jugadorRegistro)
+        {
+            Mensaje mensaje = new Mensaje();
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+            if (conexionBD != null)
+            {
+                try
+                {
+                    string sentencia = "INSERT INTO jugador (nombreCompleto, fechaNacimiento, telefono, password, email) " +
+                                       "VALUES(@nombreCompleto,@fechaNacimiento,@telefono,@password,@email)";
+                    MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@nombreCompleto", jugadorRegistro.Nombre);
+                    mySqlCommand.Parameters.AddWithValue("@fechaNacimiento", jugadorRegistro.FechaNacimiento);
+                    mySqlCommand.Parameters.AddWithValue("@telefono", jugadorRegistro.Telefono);
+                    mySqlCommand.Parameters.AddWithValue("@password", jugadorRegistro.Password);
+                    mySqlCommand.Parameters.AddWithValue("@email", jugadorRegistro.Email);
+                    mySqlCommand.Prepare();
+                    int filasAfectadas = mySqlCommand.ExecuteNonQuery();
+                    if (filasAfectadas > 0)
+                    {
+                        mensaje.Error = false;
+                        mensaje.MensajeRespuesta = "Jugador registrado con éxito";
+                    }
+                    else
+                    {
+                        mensaje.Error = true;
+                        mensaje.MensajeRespuesta = "Error al registrar el jugador";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    mensaje.Error = true;
+                    mensaje.MensajeRespuesta = ex.Message;
+                }
+            }
+            else
+            {
+                mensaje.Error = true;
+                mensaje.MensajeRespuesta = "Por el momento no hay conexión con los servicios...";
+            }
+            return mensaje;
+        }
+
+        public static Mensaje editarJugador(Jugador jugadorRegistro)
+        {
+            Mensaje mensaje = new Mensaje();
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+            if (conexionBD != null)
+            {
+                try
+                {
+                    string sentencia = "UPDATE jugador SET nombreCompleto = @nombreCompleto,fechaNacimiento = @fechaNacimiento,telefono=@telefono WHERE idJugador = @idJugador";
+                    MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@nombreCompleto", jugadorRegistro.Nombre);
+                    mySqlCommand.Parameters.AddWithValue("@fechaNacimiento", jugadorRegistro.FechaNacimiento);
+                    mySqlCommand.Parameters.AddWithValue("@telefono", jugadorRegistro.Telefono);
+                    mySqlCommand.Parameters.AddWithValue("@idJugador", jugadorRegistro.Id);
+                    mySqlCommand.Prepare();
+                    int filasAfectadas = mySqlCommand.ExecuteNonQuery();
+                    if (filasAfectadas > 0)
+                    {
+                        mensaje.Error = false;
+                        mensaje.MensajeRespuesta = "Jugador actualizado con éxito";
+                    }
+                    else
+                    {
+                        mensaje.Error = true;
+                        mensaje.MensajeRespuesta = "Error al actualizar el Jugador";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    mensaje.Error = true;
+                    mensaje.MensajeRespuesta = ex.Message;
+                }
+            }
+            else
+            {
+                mensaje.Error = true;
+                mensaje.MensajeRespuesta = "Por el momento no hay conexión con los servicios...";
+            }
+            return mensaje;
+        }
+
     }
 }
