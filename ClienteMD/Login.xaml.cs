@@ -26,6 +26,22 @@ namespace ClienteMD
         private void clickIngresar(object sender, RoutedEventArgs e)
         {
             Console.WriteLine($"Usuario: {Usuario.Text} Contraseña:{Contraseña.Password}");
+            Boolean camposVacios = false;
+            if (Usuario.Text.Equals(""))
+            {
+                MessageBox.Show("El nombre de usuario se encuentra vacio, ingresa tu usuario");
+                camposVacios = true;
+            }
+            if (Contraseña.Password.Equals(""))
+            {
+                MessageBox.Show("La contraseña se encuentra vacio, ingresa tu contraseña");
+                camposVacios = true;
+            }
+            if (camposVacios == false)
+            {
+                this.Close();
+                //PaginaPrincipal.show();
+            }
         }
 
         private void clickRegistrarse(object sender, RoutedEventArgs e)
