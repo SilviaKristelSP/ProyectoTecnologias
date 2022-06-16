@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteMD.Vistas;
+using System;
 using System.Windows;
 using System.Windows.Input;
 namespace ClienteMD
@@ -30,7 +31,9 @@ namespace ClienteMD
 
         private void clickRegistrarse(object sender, RoutedEventArgs e)
         {
-
+            RegistroUsuario registroUsuario = new RegistroUsuario();
+            this.Close();
+            registroUsuario.Show();
         }
     }
 }
