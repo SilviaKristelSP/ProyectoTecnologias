@@ -44,6 +44,7 @@ C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\Pa
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\PantallaRetador.baml
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\Perfil.baml
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\RegistroUsuario.baml
+<<<<<<< HEAD
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe.config
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.pdb
@@ -74,3 +75,35 @@ C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\Aplicacio
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.CoreCompileInputs.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.pdb
+=======
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe.config
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.pdb
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.AssemblyReference.cache
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.SuggestedBindingRedirects.cache
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\CreacionPartida.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\EdicionPerfil.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\InicioSesion.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PaginaPrincipal.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PantallaAdivinador.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PantallaRetador.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\Perfil.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\RegistroUsuario.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\App.g.cs
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente_MarkupCompile.cache
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente_MarkupCompile.lref
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\CreacionPartida.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\EdicionPerfil.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\InicioSesion.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PaginaPrincipal.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PantallaAdivinador.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\PantallaRetador.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\Perfil.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\RegistroUsuario.baml
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.g.resources
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.Properties.Resources.resources
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.GenerateResource.cache
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.CoreCompileInputs.cache
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.exe
+C:\Users\katia\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.pdb
+>>>>>>> 2fbcfd3458ff9e1e669cb56fc4ebb64198c1a829
