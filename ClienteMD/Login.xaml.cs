@@ -40,8 +40,9 @@ namespace ClienteMD
             }
             if (camposVacios == false)
             {
+                PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
                 this.Close();
-                //PaginaPrincipal.show();
+                paginaPrincipal.Show();
             }
         }
 
