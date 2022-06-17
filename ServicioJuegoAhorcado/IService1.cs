@@ -29,6 +29,9 @@ namespace ServicioJuegoAhorcado
         int recuperarPuntajeGlobal(int idJugador);
 
         [OperationContract]
+        Jugador obtenerDatosJugador(int idJugador);
+
+        [OperationContract]
         List<Categoria> obtenerCategorias();
 
         [OperationContract]

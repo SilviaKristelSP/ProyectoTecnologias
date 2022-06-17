@@ -33,10 +33,6 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                         Jugador jugadorBD = new Jugador();
                         jugadorBD.Id = ((respuesta.IsDBNull(0)) ? 0 : respuesta.GetInt32(0));
                         jugadorBD.Nombre = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
-                        jugadorBD.FechaNacimiento = ((respuesta.IsDBNull(2)) ? "" : respuesta.GetString(2));
-                        jugadorBD.Telefono = ((respuesta.IsDBNull(3)) ? "" : respuesta.GetString(3));
-                        jugadorBD.PuntajeGlobal = ((respuesta.IsDBNull(5)) ? 0 : respuesta.GetInt32(5));
-                        jugadorBD.Email = ((respuesta.IsDBNull(6)) ? "" : respuesta.GetString(6));
 
                         respuestaBD.DatosJugador = jugadorBD;
                     }
@@ -207,6 +203,44 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             }
 
             return puntajeGlobal;
+        }
+
+        public static Jugador obtenerDatosJugador(int idJugador)
+        {
+            Jugador jugadorBD = new Jugador();
+            if (idJugador > 0)
+            {
+                MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+                if(conexionBD != null)
+                {
+                    try
+                    {
+                        String consulta = "SELECT * FROM jugador WHERE idJugador = @idJugador";
+                        MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
+                        mySqlCommand.Parameters.AddWithValue("@idJugador", idJugador);
+                        MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                        if (respuesta.Read())
+                        {
+                            jugadorBD.Id = ((respuesta.IsDBNull(0)) ? 0 : respuesta.GetInt32(0));
+                            jugadorBD.Nombre = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
+                            jugadorBD.FechaNacimiento = ((respuesta.IsDBNull(2)) ? "" : respuesta.GetString(2));
+                            jugadorBD.Telefono = ((respuesta.IsDBNull(3)) ? "" : respuesta.GetString(3));
+                            jugadorBD.PuntajeGlobal = ((respuesta.IsDBNull(5)) ? 0 : respuesta.GetInt32(5));
+                            jugadorBD.Email = ((respuesta.IsDBNull(6)) ? "" : respuesta.GetString(6));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        jugadorBD = null;
+                    }
+                    
+                }
+                else
+                {
+                    jugadorBD = null;
+                }
+            }
+            return jugadorBD;
         }
     }
 }
