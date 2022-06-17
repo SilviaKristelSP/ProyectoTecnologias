@@ -18,7 +18,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    String consulta = "SELECT partida.fecha, jugador.email FROM partida INNER JOIN jugador ON " +
+                    String consulta = "SELECT partida.fecha, jugador.nombreCompleto FROM partida INNER JOIN jugador ON " +
                                       "partida.retador = jugador.idJugador INNER JOIN palabra ON " +
                                       "partida.palabraAdivinada = palabra.idPalabra WHERE partida.adivinador = @idAdivinador";
                     MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
@@ -29,7 +29,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                     {
                         Partida aux = new Partida();
                         aux.Fecha = ((respuesta.IsDBNull(0)) ? new DateTime(0,0,0) : respuesta.GetDateTime(0));
-                        aux.CorreoRetador = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
+                        aux.NombreRetador = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
 
                         partidasGanadas.Add(aux);
                     }

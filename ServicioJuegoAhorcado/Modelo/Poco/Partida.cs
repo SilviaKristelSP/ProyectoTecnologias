@@ -16,6 +16,8 @@ namespace ServicioJuegoAhorcado.Modelo.Poco
         public int GanoLaPartida { get; set; }
         public String CorreoRetador { get; set; }
         public String CorreoAdivinador { get; set; }
+        public String NombreRetador { get; set; }
+        public String NombreoAdivinador { get; set; }
         public String Palabra { get; set; }
     }
 }
