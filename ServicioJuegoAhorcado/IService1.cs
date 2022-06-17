@@ -21,5 +21,23 @@ namespace ServicioJuegoAhorcado
 
         [OperationContract]
         Mensaje editarJugador(Jugador jugadorRegistro);
+
+        [OperationContract]
+        bool comprobarExistenciaCorreo(String correo);
+
+        [OperationContract]
+        int recuperarPuntajeGlobal(int idJugador);
+
+        [OperationContract]
+        List<Categoria> obtenerCategorias();
+
+        [OperationContract]
+        List<Palabra> obtenerPalabras();
+
+        [OperationContract]
+        List<Partida> obtenerPartidasGanadas(int idJugador);
+
+        [OperationContract]
+        bool registrarPartida(Partida partidaGanada);
     }
 }
