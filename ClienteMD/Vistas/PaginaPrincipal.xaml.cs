@@ -41,7 +41,9 @@ namespace ClienteMD.Vistas
 
         private void clickPerfil(object sender, RoutedEventArgs e)
         {
-
+            Perfil perfil = new Perfil();
+            this.Close();
+            perfil.Show();
         }
 
         private void clickEntrarPartida(object sender, RoutedEventArgs e)
