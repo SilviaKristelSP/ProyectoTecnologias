@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\obj\Release\
+C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Release\
 AplicacionCliente
 none
 false
 TRACE
-C:\Users\MrMMP\Desktop\ProyectoTecnologias\AplicacionCliente\App.xaml
-1-1634233200
+C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\App.xaml
+8-683315259
 
-5632184586
+13-1048020179
 13-1310406943
-InicioSesion.xaml;
+CreacionPartida.xaml;EdicionPerfil.xaml;InicioSesion.xaml;PaginaPrincipal.xaml;PantallaAdivinador.xaml;PantallaRetador.xaml;Perfil.xaml;RegistroUsuario.xaml;
 
 True
 

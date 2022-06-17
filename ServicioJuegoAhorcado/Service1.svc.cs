@@ -26,5 +26,35 @@ namespace ServicioJuegoAhorcado
         {
             return JugadorDAO.editarJugador(jugadorRegistro);
         }
+
+        public bool comprobarExistenciaCorreo(String correo)
+        {
+            return JugadorDAO.comprobarExistenciaCorreo(correo);
+        }
+
+        public int recuperarPuntajeGlobal(int idJugador)
+        {
+            return JugadorDAO.recuperarPuntajeGlobal(idJugador);
+        }
+
+        public List<Categoria> obtenerCategorias()
+        {
+            return CategoriaDAO.obtenerCategorias();
+        }
+
+        public List<Palabra> obtenerPalabras()
+        {
+            return PalabraDAO.obtenerPalabras();
+        }
+
+        public List<Partida> obtenerPartidasGanadas(int idJugador)
+        {
+            return PartidaDAO.obtenerPartidasGanadas(idJugador);
+        }
+        
+        public bool registrarPartida(Partida partidaGanada)
+        {
+            return PartidaDAO.registrarPartida(partidaGanada);
+        }
     }
 }

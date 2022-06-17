@@ -151,5 +151,62 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             return mensaje;
         }
 
+        public static bool comprobarExistenciaCorreo(String correo)
+        {
+            bool resultado = false;
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+
+            if(conexionBD != null)
+            {
+                try
+                {
+                    string consulta = "SELECT idJugador FROM jugador WHERE email = @email";
+                    MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@email", correo);
+                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                    if (respuesta.Read())
+                    {
+                        resultado = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado = true;
+                } 
+            }
+            else
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static int recuperarPuntajeGlobal(int idJugador)
+        {
+            int puntajeGlobal = -1;
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+            if(conexionBD != null)
+            {
+                try
+                {
+                    String consulta = "SELECT puntajeGlobal FROM jugador WHERE idJugador = @idJugador";
+                    MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@idJugador", idJugador);
+                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                    if (respuesta.Read())
+                    {
+                        puntajeGlobal = ((respuesta.IsDBNull(0)) ? -1 : respuesta.GetInt32(0));
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                
+            }
+
+            return puntajeGlobal;
+        }
     }
 }

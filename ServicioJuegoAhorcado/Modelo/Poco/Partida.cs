@@ -10,9 +10,12 @@ namespace ServicioJuegoAhorcado.Modelo.Poco
     {
         public int IdPartida { get; set; }
         public int IdRetador { get; set; }
-        public int IdArdivinador { get; set; }
+        public int IdAdivinador { get; set; }
         public DateTime Fecha { get; set; }
         public int IdPalabra { get; set; }
         public int GanoLaPartida { get; set; }
+        public String CorreoRetador { get; set; }
+        public String CorreoAdivinador { get; set; }
+        public String Palabra { get; set; }
     }
 }
