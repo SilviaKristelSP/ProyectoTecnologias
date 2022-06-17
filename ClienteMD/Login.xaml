@@ -78,7 +78,7 @@
                         LOGIN
                     </TextBlock>
                     <TextBox x:Name="Usuario" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 25 0 0" Style="{StaticResource TBTemaModerno}"></TextBox>
-                    <PasswordBox x:Name="Contraseña" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 25 0 0" Style="{StaticResource PBTemaModerno}"></PasswordBox>
+                    <PasswordBox x:Name="Contraseña" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 25 0 0" Style="{StaticResource PBTemaModerno}"/>
                     <Button Content="Ingresar" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickIngresar" Margin="0 30 0 0">
                         <Button.Style>
                             <Style TargetType="Button">
