@@ -64,7 +64,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                     int filasAfectadas = mySqlCommand.ExecuteNonQuery();
                     if(filasAfectadas > 0)
                     {
-                        int puntajeGlobal = JugadorDAO.recuperarPuntajeGlobal(partidaGanada.IdAdivinador);
+                        int puntajeGlobal = JugadorDAO.obtenerPuntajeGlobal(partidaGanada.IdAdivinador);
                         if(puntajeGlobal > -1)
                         {
                             puntajeGlobal += 10;

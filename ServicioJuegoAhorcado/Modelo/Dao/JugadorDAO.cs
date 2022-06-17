@@ -33,6 +33,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                         Jugador jugadorBD = new Jugador();
                         jugadorBD.Id = ((respuesta.IsDBNull(0)) ? 0 : respuesta.GetInt32(0));
                         jugadorBD.Nombre = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
+                        jugadorBD.Email = ((respuesta.IsDBNull(6)) ? "" : respuesta.GetString(6));
 
                         respuestaBD.DatosJugador = jugadorBD;
                     }
@@ -178,7 +179,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             return resultado;
         }
 
-        public static int recuperarPuntajeGlobal(int idJugador)
+        public static int obtenerPuntajeGlobal(int idJugador)
         {
             int puntajeGlobal = -1;
             MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
