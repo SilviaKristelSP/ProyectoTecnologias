@@ -72,9 +72,9 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                             MySqlCommand mySqlCommand2 = new MySqlCommand(sentencia2, conexionBD);
                             mySqlCommand2.Parameters.AddWithValue("@puntajeGlobal", puntajeGlobal);
                             mySqlCommand2.Parameters.AddWithValue("@idAdivinador", partidaGanada.IdAdivinador);
-                            mySqlCommand.Prepare();
-                            filasAfectadas = mySqlCommand.ExecuteNonQuery();
-                            if(filasAfectadas > 0)
+                            mySqlCommand2.Prepare();
+                            int filasAfectadas2 = mySqlCommand2.ExecuteNonQuery();
+                            if(filasAfectadas2 > 0)
                             {
                                 resultadoInsercion = true;
                             }
