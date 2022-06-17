@@ -1,19 +1,20 @@
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe.config
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.pdb
-C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.AssemblyReference.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.SuggestedBindingRedirects.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Temas\PasswordBoxTema.baml
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Temas\TextBoxTema.baml
-C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Login.g.cs
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\Login.g.cs
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\PaginaPrincipal.g.cs
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\Perfil.g.cs
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\RegistroUsuario.g.cs
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\App.g.cs
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD_MarkupCompile.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD_MarkupCompile.lref
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\App.baml
-C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Login.baml
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\Login.baml
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\PaginaPrincipal.baml
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\Perfil.baml
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\RegistroUsuario.baml
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.g.resources
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.Properties.Resources.resources
@@ -21,6 +22,9 @@ C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.CoreCompileInputs.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.pdb
+<<<<<<< HEAD
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.AssemblyReference.cache
+=======
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe.config
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.pdb
@@ -44,3 +48,4 @@ C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.CoreCompileInputs.cache
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.exe
 C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.pdb
+>>>>>>> 087ac62842ea5d6eda271c6653d0a3738a5ca0e6

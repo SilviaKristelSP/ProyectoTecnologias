@@ -62,12 +62,15 @@
     <Compile Include="Vistas\PaginaPrincipal.xaml.cs">
       <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Perfil.xaml.cs">
+      <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\RegistroUsuario.xaml.cs">
       <DependentUpon>RegistroUsuario.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="Vistas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -111,7 +114,7 @@
     <Resource Include="Imagenes\soga.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Login.xaml">
+    <Page Include="Vistas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\PaginaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Perfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\cuerda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\lineaRelleno.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
