@@ -1,6 +1,7 @@
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe.config
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.pdb
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.AssemblyReference.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.SuggestedBindingRedirects.cache
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Temas\PasswordBoxTema.baml
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Temas\TextBoxTema.baml

@@ -5,8 +5,132 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteMD.Vistas"
         mc:Ignorable="d"
-        Title="PaginaPrincipal" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Border Background="#1B2430" CornerRadius="20" MouseDown="moverVentana">
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button Content="Cerrar sesion" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickCerrarSesion" Margin="10 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBlock Margin="150 0 170 0" Foreground="#D6D5A8" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center">¿Listo para jugar?</TextBlock>
+                    <Button Content="Perfil" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickPerfil" Margin="10 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Partidas disponibles:</TextBlock>
+                    <Button Content="Entrar a partida" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickEntrarPartida" Margin="466 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="120" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Margin="15">
+                <Border CornerRadius="10" BorderThickness="5" BorderBrush="#51557E">
+                    <DataGrid x:Name="partidasDisponibles" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre" Width="*" Binding="{Binding Nombre}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Correo" Width="*" Binding="{Binding Correo}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Fecha de creacion" Width="*" Binding="{Binding FechaCreacion}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Imagenes/cuerda.png" Width="50" Margin="200 0 0 0"/>
+                    <Button Content="Crear partida" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickCrearPartida" Margin="90 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Source="/Imagenes/cuerda.png" Width="50" Margin="90 0 0 0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>
