@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ClienteMD\obj\Debug\
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\
 ClienteMD
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ClienteMD\App.xaml
-3-1476630159
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\App.xaml
+6649876830
 
-6-1808736922
+82139184680
 13-38814620
-Login.xaml;Temas\PasswordBoxTema.xaml;Temas\TextBoxTema.xaml;
+Vistas\Login.xaml;Temas\PasswordBoxTema.xaml;Temas\TextBoxTema.xaml;Vistas\PaginaPrincipal.xaml;Vistas\Perfil.xaml;Vistas\RegistroUsuario.xaml;
 
-True
+False
 
