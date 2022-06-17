@@ -179,7 +179,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             return resultado;
         }
 
-        public static int recuperarPuntajeGlobal(int idJugador)
+        public static int obtenerPuntajeGlobal(int idJugador)
         {
             int puntajeGlobal = -1;
             MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
