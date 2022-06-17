@@ -23,5 +23,35 @@ namespace ClienteMD.Vistas
         {
             InitializeComponent();
         }
+
+        private void moverVentana(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void clickCerrarSesion(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void clickPerfil(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clickEntrarPartida(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clickCrearPartida(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
