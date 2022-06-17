@@ -33,6 +33,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
                         Jugador jugadorBD = new Jugador();
                         jugadorBD.Id = ((respuesta.IsDBNull(0)) ? 0 : respuesta.GetInt32(0));
                         jugadorBD.Nombre = ((respuesta.IsDBNull(1)) ? "" : respuesta.GetString(1));
+                        jugadorBD.Email = ((respuesta.IsDBNull(6)) ? "" : respuesta.GetString(6));
 
                         respuestaBD.DatosJugador = jugadorBD;
                     }
