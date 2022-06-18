@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ClienteMD.Vistas
 {
     /// <summary>
-    /// Interaction logic for Perfil.xaml
+    /// Interaction logic for EdicionPerfil.xaml
     /// </summary>
-    public partial class Perfil : Window
+    public partial class EdicionPerfil : Window
     {
-        public Perfil()
+        public EdicionPerfil()
         {
             InitializeComponent();
         }
@@ -31,11 +31,9 @@ namespace ClienteMD.Vistas
             paginaPrincipal.Show();
         }
 
-        private void clickEditarPerfil(object sender, RoutedEventArgs e)
+        private void clickGuardarCambios(object sender, RoutedEventArgs e)
         {
-            EdicionPerfil edicionPerfil = new EdicionPerfil();
-            this.Close();
-            edicionPerfil.Show();
+
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
