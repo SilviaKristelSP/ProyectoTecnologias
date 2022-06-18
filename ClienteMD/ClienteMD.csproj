@@ -68,6 +68,12 @@
     <Compile Include="Vistas\PaginaPrincipal.xaml.cs">
       <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PantallaAdivinador.xaml.cs">
+      <DependentUpon>PantallaAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\PantallaRetador.xaml.cs">
+      <DependentUpon>PantallaRetador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Perfil.xaml.cs">
       <DependentUpon>Perfil.xaml</DependentUpon>
     </Compile>
@@ -144,6 +150,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vistas\PantallaAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\PantallaRetador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\Perfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +189,14 @@
   <ItemGroup>
     <Resource Include="Imagenes\cartel.png" />
     <Resource Include="Imagenes\ojos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\luz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\partidaGano.png" />
+    <Resource Include="Imagenes\partidaInicio.png" />
+    <Resource Include="Imagenes\partidaPerdio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
