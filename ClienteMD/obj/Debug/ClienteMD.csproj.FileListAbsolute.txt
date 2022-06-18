@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe.config
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.pdb
@@ -56,3 +57,5 @@ C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\Clie
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.exe
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.pdb
+=======
+>>>>>>> 3e6fc4a9b1f35565c2f14a0adb33870e718cd732
