@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\bin\ServicioPartida.dll.config
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\bin\ServicioPartida.dll
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\bin\ServicioPartida.pdb
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\obj\Debug\ServicioPartida.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\obj\Debug\ServicioPartida.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\obj\Debug\ServicioPartida.dll
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioPartida\obj\Debug\ServicioPartida.pdb

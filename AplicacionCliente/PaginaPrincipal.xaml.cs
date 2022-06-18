@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,11 +18,14 @@ namespace AplicacionCliente
     /// <summary>
     /// Lógica de interacción para PaginaPrincipal.xaml
     /// </summary>
-    public partial class PaginaPrincipal : Window
+    public partial class PaginaPrincipal : Window, ServicePartida.IServiceCallback
     {
+
         public PaginaPrincipal()
         {
             InitializeComponent();
+            
+            
         }
 
         private void clicEntrarPartida(object sender, RoutedEventArgs e)
@@ -36,6 +40,7 @@ namespace AplicacionCliente
             CreacionPartida creacionPartida = new CreacionPartida();
             creacionPartida.Show();
             this.Close();
+
         }
 
         private void clicVerPerfil(object sender, RoutedEventArgs e)
