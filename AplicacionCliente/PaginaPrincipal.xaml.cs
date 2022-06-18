@@ -18,14 +18,12 @@ namespace AplicacionCliente
     /// <summary>
     /// Lógica de interacción para PaginaPrincipal.xaml
     /// </summary>
-    public partial class PaginaPrincipal : Window, ServicePartida.IServiceCallback
-    {
+    public partial class PaginaPrincipal : Window
+    { 
 
         public PaginaPrincipal()
         {
             InitializeComponent();
-            
-            
         }
 
         private void clicEntrarPartida(object sender, RoutedEventArgs e)
