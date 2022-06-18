@@ -59,6 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Vistas\CreacionPartida.xaml.cs">
+      <DependentUpon>CreacionPartida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\EdicionPerfil.xaml.cs">
       <DependentUpon>EdicionPerfil.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Resource Include="Imagenes\soga.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Vistas\CreacionPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\EdicionPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +171,10 @@
   <ItemGroup>
     <Resource Include="Imagenes\fantasma.png" />
     <Resource Include="Imagenes\isaac3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cartel.png" />
+    <Resource Include="Imagenes\ojos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

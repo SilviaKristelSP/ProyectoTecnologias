@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ClienteMD.Vistas
 {
     /// <summary>
-    /// Interaction logic for PaginaPrincipal.xaml
+    /// Interaction logic for CreacionPartida.xaml
     /// </summary>
-    public partial class PaginaPrincipal : Window
+    public partial class CreacionPartida : Window
     {
-        public PaginaPrincipal()
+        public CreacionPartida()
         {
             InitializeComponent();
         }
@@ -32,30 +32,16 @@ namespace ClienteMD.Vistas
             }
         }
 
-        private void clickCerrarSesion(object sender, RoutedEventArgs e)
+        private void clickRegresar(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
             this.Close();
-            login.Show();
-        }
-
-        private void clickPerfil(object sender, RoutedEventArgs e)
-        {
-            Perfil perfil = new Perfil();
-            this.Close();
-            perfil.Show();
-        }
-
-        private void clickEntrarPartida(object sender, RoutedEventArgs e)
-        {
-
+            paginaPrincipal.Show();
         }
 
         private void clickCrearPartida(object sender, RoutedEventArgs e)
         {
-            CreacionPartida creacionPartida = new CreacionPartida();
-            this.Close();
-            creacionPartida.Show();
+
         }
     }
 }
