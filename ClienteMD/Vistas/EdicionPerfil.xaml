@@ -1,0 +1,82 @@
+﻿<Window x:Class="ClienteMD.Vistas.EdicionPerfil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteMD.Vistas"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="500">
+    <Border Background="#1B2430" CornerRadius="20" BorderBrush="#51557E" BorderThickness="5" MouseDown="moverVentana">
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel 
+                Grid.Row="0" Orientation="Horizontal">
+                <Image Margin="35 5 0 0" Source="/Imagenes/isaac3.png" />
+                <TextBlock Margin="0 5 0 0" FontFamily="Fuentes/#Roboto" FontSize="50" FontWeight="Bold" TextAlignment="Center" Foreground="#FFD6D5A8" HorizontalAlignment="Center" VerticalAlignment="Center">Edita tu perfil</TextBlock>
+                <Image Margin="0 5 0 0" Source="/Imagenes/fantasma.png" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <TextBlock Margin="10 10 0 0" FontSize="20" FontWeight="Medium" TextAlignment="Center" Foreground="#FFD6D5A8">Nombre:</TextBlock>
+                <TextBox Margin="10 15 0 0" HorizontalAlignment="Center" x:Name="Nombre" Width="300" Height="30" Style="{StaticResource TBTemaModerno}"/>
+                <TextBlock Margin="10 10 0 0" FontSize="20" FontWeight="Medium" TextAlignment="Center" Foreground="#FFD6D5A8">Telefono:</TextBlock>
+                <TextBox Margin="10 15 0 0" HorizontalAlignment="Center" x:Name="Telefono" Width="300" Height="30" Style="{StaticResource TBTemaModerno}"/>
+                <TextBlock Margin="10 10 0 0" FontSize="20" FontWeight="Medium" TextAlignment="Center" Foreground="#FFD6D5A8">Fecha de nacimiento:</TextBlock>
+                <DatePicker x:Name = "FechaNacimiento" Margin="10 10 0 0" Width="300" HorizontalAlignment="Center" DisplayDateStart="1/1/1900"
+                        DisplayDateEnd="12/31/2004">
+                </DatePicker>
+                <StackPanel Margin="100 75 0 0" Orientation="Horizontal">
+                    <Button Content="Regresar" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickRegresar" Margin="0 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="Guardar cambios" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickGuardarCambios" Margin="70 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="130" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,7 +1,0 @@
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\bin\ServicioJugabilidad.dll.config
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\bin\ServicioJugabilidad.dll
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\bin\ServicioJugabilidad.pdb
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\obj\Debug\ServicioJugabilidad.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\obj\Debug\ServicioJugabilidad.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\obj\Debug\ServicioJugabilidad.dll
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJugabilidad\obj\Debug\ServicioJugabilidad.pdb
