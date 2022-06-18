@@ -32,9 +32,14 @@ namespace ServicioJuegoAhorcado
             return JugadorDAO.comprobarExistenciaCorreo(correo);
         }
 
-        public int recuperarPuntajeGlobal(int idJugador)
+        public int obtenerPuntajeGlobal(int idJugador)
         {
-            return JugadorDAO.recuperarPuntajeGlobal(idJugador);
+            return JugadorDAO.obtenerPuntajeGlobal(idJugador);
+        }
+
+        public Jugador obtenerDatosJugador(int idJugador)
+        {
+            return JugadorDAO.obtenerDatosJugador(idJugador);
         }
 
         public List<Categoria> obtenerCategorias()
@@ -56,5 +61,6 @@ namespace ServicioJuegoAhorcado
         {
             return PartidaDAO.registrarPartida(partidaGanada);
         }
+
     }
 }

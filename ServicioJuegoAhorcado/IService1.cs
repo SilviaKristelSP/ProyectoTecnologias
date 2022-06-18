@@ -26,7 +26,10 @@ namespace ServicioJuegoAhorcado
         bool comprobarExistenciaCorreo(String correo);
 
         [OperationContract]
-        int recuperarPuntajeGlobal(int idJugador);
+        int obtenerPuntajeGlobal(int idJugador);
+
+        [OperationContract]
+        Jugador obtenerDatosJugador(int idJugador);
 
         [OperationContract]
         List<Categoria> obtenerCategorias();
