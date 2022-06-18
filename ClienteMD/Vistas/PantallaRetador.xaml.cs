@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ClienteMD.Vistas
 {
     /// <summary>
-    /// Interaction logic for CreacionPartida.xaml
+    /// Interaction logic for PantallaAdivinador.xaml
     /// </summary>
-    public partial class CreacionPartida : Window
+    public partial class PantallaRetador : Window
     {
-        public CreacionPartida()
+        public PantallaRetador()
         {
             InitializeComponent();
         }
@@ -32,18 +32,11 @@ namespace ClienteMD.Vistas
             }
         }
 
-        private void clickRegresar(object sender, RoutedEventArgs e)
+        private void clickAbandonarPartida(object sender, RoutedEventArgs e)
         {
             PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
             this.Close();
             paginaPrincipal.Show();
-        }
-
-        private void clickCrearPartida(object sender, RoutedEventArgs e)
-        {
-            PantallaRetador pantallaRetador = new PantallaRetador();
-            this.Close();
-            pantallaRetador.Show();
         }
     }
 }
