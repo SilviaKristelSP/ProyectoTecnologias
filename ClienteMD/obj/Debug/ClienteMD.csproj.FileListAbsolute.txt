@@ -23,6 +23,10 @@ C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.exe
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.pdb
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.AssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\EdicionPerfil.g.cs
+C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\Vistas\EdicionPerfil.baml
+=======
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe.config
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.exe
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\bin\Debug\ClienteMD.pdb
@@ -48,3 +52,4 @@ C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\Clie
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.exe
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ClienteMD\obj\Debug\ClienteMD.pdb
+>>>>>>> 45c4b14968084d32968b58ec541865cc6a1963c2
