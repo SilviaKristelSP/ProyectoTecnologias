@@ -44,9 +44,6 @@ C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\Ap
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\AplicacionCliente.exe
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\AplicacionCliente\obj\Debug\AplicacionCliente.pdb
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe.config
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.pdb
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente.csproj.SuggestedBindingRedirects.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\CreacionPartida.g.cs
@@ -60,6 +57,9 @@ C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\De
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\App.g.cs
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente_MarkupCompile.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\AplicacionCliente_MarkupCompile.lref
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe.config
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.exe
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\bin\Debug\AplicacionCliente.pdb
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\CreacionPartida.baml
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\EdicionPerfil.baml
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\AplicacionCliente\obj\Debug\InicioSesion.baml

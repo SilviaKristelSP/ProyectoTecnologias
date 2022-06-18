@@ -118,6 +118,7 @@
     <Compile Include="Modelo\Poco\Palabra.cs" />
     <Compile Include="Modelo\Poco\Partida.cs" />
     <Compile Include="Modelo\Poco\RespuestaLogin.cs" />
+    <Compile Include="Modelo\Poco\Turno.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
