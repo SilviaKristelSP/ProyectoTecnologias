@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\
+=======
+C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\obj\Debug\
+>>>>>>> ad52bca37409c212f15a936a53752ad9a9da147f
 ClienteMD
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\MrMMP\Desktop\ProyectoTecnologias\ClienteMD\App.xaml
+=======
+C:\Users\katia\Desktop\ProyectoTecnologias\ClienteMD\App.xaml
+>>>>>>> ad52bca37409c212f15a936a53752ad9a9da147f
 101956711306
 
 14-1721406656
