@@ -88,8 +88,6 @@ C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ServicioJuegoAhorcado\obj\Debu
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.CopyComplete
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.dll
 C:\Users\User\Desktop\ProyectoTecno\JuegoAhorcado\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.pdb
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\ServicioJuegoAhorcado.dll.config
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\ServicioJuegoAhorcado.dll
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\ServicioJuegoAhorcado.pdb
@@ -115,6 +113,8 @@ C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bi
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\System.Memory.xml
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\System.Numerics.Vectors.xml
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.csproj.CopyComplete
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.dll
 C:\Users\User\Desktop\ProyectoTecno\ProyectoTecnologias\ServicioJuegoAhorcado\obj\Debug\ServicioJuegoAhorcado.pdb

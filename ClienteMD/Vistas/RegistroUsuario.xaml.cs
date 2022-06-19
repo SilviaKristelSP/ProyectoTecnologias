@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using ClienteMD.ServiceReference1;
 
 namespace ClienteMD.Vistas
 {
@@ -10,9 +12,12 @@ namespace ClienteMD.Vistas
     /// </summary>
     public partial class RegistroUsuario : Window
     {
+        Service1Client servicio;
+
         public RegistroUsuario()
         {
             InitializeComponent();
+            servicio = new Service1Client();
         }
 
         private void clickSalir(object sender, RoutedEventArgs e)
@@ -30,17 +35,44 @@ namespace ClienteMD.Vistas
             }
         }
 
-        private void clickRegistrar(object sender, RoutedEventArgs e)
+        private async void clickRegistrar(object sender, RoutedEventArgs e)
         {
-            //Boolean datosValidos = false;
-            //Console.WriteLine("Boton registra");
             if ((validarNombre(Nombre.Text)) && (validarCorreo(Correo.Text)) && (validarTelefono(Telefono.Text)) && (validarContraseña(Contraseña.Text)) && (validarFecha()))
             {
-                MessageBox.Show("Registro exitoso");
-                //datosValidos = true; //En realidad no se necesita x ahora, pero la dejo por si acaso 
-                //crear jugador
+                if(await servicio.comprobarExistenciaCorreoAsync(Correo.Text))
+                {
+                    MessageBox.Show("Este correo ya se encuentra registrado, inetenat con otro");
+                }
+                else
+                {
+                    Jugador jugadorNuevo = crearJugador();
+                    Mensaje mensaje = await servicio.insertarJugadorAsync(jugadorNuevo);
+                    if (mensaje.Error)
+                    {
+                        MessageBox.Show(mensaje.MensajeRespuesta, "Error");
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje.MensajeRespuesta, "Registro exitoso");
+                        Login login = new Login();
+                        login.Show();
+                        this.Close();
+                    }
+                }
             }
-           
+
+        }
+
+        private Jugador crearJugador()
+        {
+            Jugador jugadorAux = new Jugador();
+            jugadorAux.Nombre = Nombre.Text;
+            jugadorAux.Email = Correo.Text;
+            DateTime fecha = Convert.ToDateTime(FechaNacimiento.Text);
+            jugadorAux.FechaNacimiento = fecha.ToString("yyyy-MM-dd");
+            jugadorAux.Password = Contraseña.Text;
+            jugadorAux.Telefono = Telefono.Text;
+            return jugadorAux;
         }
 
 
