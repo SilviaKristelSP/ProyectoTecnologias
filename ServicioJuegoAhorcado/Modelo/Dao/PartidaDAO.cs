@@ -127,17 +127,24 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    String sentencia = "UPDATE partida SET estadoPartida = @estadoPartida, adivinador = @idAdivinador " +
-                                       "WHERE idpartida = @idPartida";
-                    MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
-                    mySqlCommand.Parameters.AddWithValue("@estadoPartida", "Iniciada");
-                    mySqlCommand.Parameters.AddWithValue("@idAdivinador", idAdivinador);
-                    mySqlCommand.Parameters.AddWithValue("@idPartida", idPartida);
-                    mySqlCommand.Prepare();
-                    int respuesta = mySqlCommand.ExecuteNonQuery();
-                    if (respuesta > 0)
+                    String consulta = "SELECT * FROM partida WHERE partida.estadoPartida = @estadoPartida";
+                    MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@estadoPartida", "En Espera");
+                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                    if (respuesta.Read())
                     {
-                        resultadoInsercion = true;
+                        String sentencia = "UPDATE partida SET estadoPartida = @estadoPartida, adivinador = @idAdivinador " +
+                                       "WHERE idpartida = @idPartida";
+                        MySqlCommand mySqlCommand2 = new MySqlCommand(sentencia, conexionBD);
+                        mySqlCommand2.Parameters.AddWithValue("@estadoPartida", "Iniciada");
+                        mySqlCommand2.Parameters.AddWithValue("@idAdivinador", idAdivinador);
+                        mySqlCommand2.Parameters.AddWithValue("@idPartida", idPartida);
+                        mySqlCommand2.Prepare();
+                        int respuesta2 = mySqlCommand2.ExecuteNonQuery();
+                        if (respuesta2 > 0)
+                        {
+                            resultadoInsercion = true;
+                        }
                     }
                 }
                 catch (Exception e)
