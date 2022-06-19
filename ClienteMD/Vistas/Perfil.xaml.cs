@@ -22,6 +22,7 @@ namespace ClienteMD.Vistas
     {
         Service1Client servicio;
         int idDelJugador;
+        Jugador datosDelPerfil;
 
         public Perfil(int idJugador)
         {
@@ -34,7 +35,7 @@ namespace ClienteMD.Vistas
 
         private async void mostrarDatosPerfil()
         {
-            Jugador datosDelPerfil = await servicio.obtenerDatosJugadorAsync(idDelJugador);
+            datosDelPerfil = await servicio.obtenerDatosJugadorAsync(idDelJugador);
             if(datosDelPerfil != null)
             {
                 tbCorreo.Text = datosDelPerfil.Email;
@@ -65,7 +66,12 @@ namespace ClienteMD.Vistas
 
         private void clickRegresar(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
+            Jugador datosPrincipales = new Jugador();
+            datosPrincipales.Email = datosDelPerfil.Email;
+            datosPrincipales.Nombre = datosDelPerfil.Nombre; 
+            datosPrincipales.Id = datosDelPerfil.Id;
+
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(datosPrincipales);
             this.Close();
             paginaPrincipal.Show();
         }
