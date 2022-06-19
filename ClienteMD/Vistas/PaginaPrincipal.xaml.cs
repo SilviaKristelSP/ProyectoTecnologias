@@ -48,7 +48,9 @@ namespace ClienteMD.Vistas
 
         private void clickEntrarPartida(object sender, RoutedEventArgs e)
         {
-
+            PantallaAdivinador pantallaAdivinador = new PantallaAdivinador();
+            this.Close();
+            pantallaAdivinador.Show();
         }
 
         private void clickCrearPartida(object sender, RoutedEventArgs e)
