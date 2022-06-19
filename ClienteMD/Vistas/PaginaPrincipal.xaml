@@ -95,11 +95,11 @@
             </Grid>
             <Grid Grid.Row="1" Margin="15">
                 <Border CornerRadius="10" BorderThickness="5" BorderBrush="#51557E">
-                    <DataGrid x:Name="partidasDisponibles" IsReadOnly="True" SelectionMode="Single">
+                    <DataGrid x:Name="partidasDisponibles" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Nombre" Width="*" Binding="{Binding Nombre}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Correo" Width="*" Binding="{Binding Correo}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Fecha de creacion" Width="*" Binding="{Binding FechaCreacion}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nombre" Width="*" Binding="{Binding NombreRetador}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Correo" Width="*" Binding="{Binding CorreoRetador}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Fecha de creacion" Width="*" Binding="{Binding Fecha}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Border>

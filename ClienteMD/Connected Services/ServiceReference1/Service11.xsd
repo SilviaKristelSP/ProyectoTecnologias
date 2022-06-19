@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62888/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" />
+  <xs:element name="logear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="logearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="logearResult" nillable="true" type="q1:RespuestaLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertarJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="jugadorRegistro" nillable="true" type="q2:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertarJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="insertarJugadorResult" nillable="true" type="q3:Mensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editarJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="jugadorRegistro" nillable="true" type="q4:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editarJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="editarJugadorResult" nillable="true" type="q5:Mensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="comprobarExistenciaCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="comprobarExistenciaCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobarExistenciaCorreoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPuntajeGlobal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idJugador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPuntajeGlobalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="obtenerPuntajeGlobalResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerDatosJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idJugador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerDatosJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="obtenerDatosJugadorResult" nillable="true" type="q6:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerCategorias">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerCategoriasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="obtenerCategoriasResult" nillable="true" type="q7:ArrayOfCategoria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPalabras">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPalabrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="obtenerPalabrasResult" nillable="true" type="q8:ArrayOfPalabra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recuperarPartidasDisponibles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recuperarPartidasDisponiblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="recuperarPartidasDisponiblesResult" nillable="true" type="q9:ArrayOfPartida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPartidaNueva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="partidaNueva" nillable="true" type="q10:Partida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPartidaNuevaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registrarPartidaNuevaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificarUnionAPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificarUnionAPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verificarUnionAPartidaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="unirseAPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+        <xs:element minOccurs="0" name="idAdivinador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="unirseAPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unirseAPartidaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="turno" nillable="true" type="q11:Turno" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarTurnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registrarTurnoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recuperarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recuperarTurnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="recuperarTurnoResult" nillable="true" type="q12:Turno" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPartidaGanada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+        <xs:element minOccurs="0" name="idAdivinador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPartidaGanadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registrarPartidaGanadaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarPartidaPerdidaOAbandonada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarPartidaPerdidaOAbandonadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarPartidaPerdidaOAbandonadaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificarEstadoPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificarEstadoPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verificarEstadoPartidaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPartidasGanadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idJugador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerPartidasGanadasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" minOccurs="0" name="obtenerPartidasGanadasResult" nillable="true" type="q13:ArrayOfPartida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClienteMD.ServiceReference1;
+using System.Windows.Threading;
 
 namespace ClienteMD.Vistas
 {
@@ -19,9 +21,20 @@ namespace ClienteMD.Vistas
     /// </summary>
     public partial class PaginaPrincipal : Window
     {
-        public PaginaPrincipal()
+        Jugador jugador;
+        Service1Client servicio;
+        DispatcherTimer dispachadorDeTiempo;
+
+        public PaginaPrincipal(Jugador jugadorLogeado)
         {
             InitializeComponent();
+            jugador = jugadorLogeado;
+            servicio = new Service1Client();
+        }
+
+        private void mostrarPartidasDisponibles()
+        {
+            
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -41,7 +54,7 @@ namespace ClienteMD.Vistas
 
         private void clickPerfil(object sender, RoutedEventArgs e)
         {
-            Perfil perfil = new Perfil();
+            Perfil perfil = new Perfil(jugador.Id);
             this.Close();
             perfil.Show();
         }
@@ -55,7 +68,7 @@ namespace ClienteMD.Vistas
 
         private void clickCrearPartida(object sender, RoutedEventArgs e)
         {
-            CreacionPartida creacionPartida = new CreacionPartida();
+            CreacionPartida creacionPartida = new CreacionPartida(jugador);
             this.Close();
             creacionPartida.Show();
         }

@@ -25,11 +25,11 @@
             <StackPanel Grid.Row="1" Orientation="Vertical" >
                 <StackPanel Margin="0 50 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Margin="0 0 0 0" FontFamily="Fuentes/#Roboto" FontSize="15" FontWeight="Medium" TextAlignment="Center" Foreground="#FFD6D5A8" VerticalAlignment="Center" HorizontalAlignment="Center">Categoria:</TextBlock>
-                    <ComboBox Margin="10 0 0 0" x:Name="Categoria" Width="150" Height="15"></ComboBox>
+                    <ComboBox Margin="10 0 0 0" x:Name="Categoria" Width="150" Height="23" SelectionChanged="Categoria_SelectionChanged" ItemsSource="{Binding Path=categorias}" DisplayMemberPath="NombreCategoria"></ComboBox>
                 </StackPanel>
                 <StackPanel Margin="0 50 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Margin="0 0 0 0" FontFamily="Fuentes/#Roboto" FontSize="15" FontWeight="Medium" TextAlignment="Center" Foreground="#FFD6D5A8" VerticalAlignment="Center" HorizontalAlignment="Center">Palabra:</TextBlock>
-                    <ComboBox Margin="10 0 0 0" x:Name="Palabra" Width="150" Height="15"></ComboBox>
+                    <ComboBox Margin="10 0 0 0" x:Name="Palabra" Width="150" Height="23" ItemsSource="{Binding Path=palabras}" DisplayMemberPath="PalabraSecreta"></ComboBox>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="2">
