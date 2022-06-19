@@ -30,11 +30,21 @@ namespace ClienteMD.Vistas
             InitializeComponent();
             jugador = jugadorLogeado;
             servicio = new Service1Client();
+            mostrarPartidasDisponibles();
+            dispachadorDeTiempo = new DispatcherTimer();
+            dispachadorDeTiempo.Interval = new TimeSpan(0, 0, 5, 0, 0);
+            dispachadorDeTiempo.Tick += (a, b) =>
+            {
+                mostrarPartidasDisponibles();
+            };
+            dispachadorDeTiempo.Start();
         }
 
-        private void mostrarPartidasDisponibles()
+        private async void mostrarPartidasDisponibles()
         {
-            
+            Partida[] partidas = await servicio.recuperarPartidasDisponiblesAsync();
+            partidasDisponibles.ItemsSource = null;
+            partidasDisponibles.ItemsSource = partidas;
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
