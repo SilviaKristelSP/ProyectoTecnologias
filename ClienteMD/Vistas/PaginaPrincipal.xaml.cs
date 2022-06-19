@@ -82,5 +82,10 @@ namespace ClienteMD.Vistas
             this.Close();
             creacionPartida.Show();
         }
+
+        private void clickRecargarPartida(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
