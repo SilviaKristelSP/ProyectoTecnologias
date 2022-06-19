@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,15 +61,35 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CreacionPartida.xaml.cs">
+      <DependentUpon>CreacionPartida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EdicionPerfil.xaml.cs">
+      <DependentUpon>EdicionPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\PaginaPrincipal.xaml.cs">
       <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\PantallaAdivinador.xaml.cs">
+      <DependentUpon>PantallaAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\PantallaRetador.xaml.cs">
+      <DependentUpon>PantallaRetador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Perfil.xaml.cs">
+      <DependentUpon>Perfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RegistroUsuario.xaml.cs">
       <DependentUpon>RegistroUsuario.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="Vistas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -99,6 +121,37 @@
     <Resource Include="Fuentes\Roboto-Regular.ttf" />
     <Resource Include="Fuentes\Roboto-Thin.ttf" />
     <Resource Include="Fuentes\Roboto-ThinItalic.ttf" />
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Categoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Jugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Mensaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Palabra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Partida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.RespuestaLogin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ClienteMD.ServiceReference1.Turno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,7 +164,15 @@
     <Resource Include="Imagenes\soga.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Login.xaml">
+    <Page Include="Vistas\CreacionPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\EdicionPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +185,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\PaginaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\PantallaAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\PantallaRetador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Perfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,6 +216,46 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\cuerda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\lineaRelleno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fantasma.png" />
+    <Resource Include="Imagenes\isaac3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cartel.png" />
+    <Resource Include="Imagenes\ojos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\luz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\partidaGano.png" />
+    <Resource Include="Imagenes\partidaInicio.png" />
+    <Resource Include="Imagenes\partidaPerdio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

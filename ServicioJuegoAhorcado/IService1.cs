@@ -26,7 +26,10 @@ namespace ServicioJuegoAhorcado
         bool comprobarExistenciaCorreo(String correo);
 
         [OperationContract]
-        int recuperarPuntajeGlobal(int idJugador);
+        int obtenerPuntajeGlobal(int idJugador);
+
+        [OperationContract]
+        Jugador obtenerDatosJugador(int idJugador);
 
         [OperationContract]
         List<Categoria> obtenerCategorias();
@@ -35,9 +38,33 @@ namespace ServicioJuegoAhorcado
         List<Palabra> obtenerPalabras();
 
         [OperationContract]
-        List<Partida> obtenerPartidasGanadas(int idJugador);
+        List<Partida> recuperarPartidasDisponibles();
 
         [OperationContract]
-        bool registrarPartida(Partida partidaGanada);
+        int registrarPartidaNueva(Partida partidaNueva);
+
+        [OperationContract]
+        String verificarUnionAPartida(int idPartida);
+
+        [OperationContract]
+        bool unirseAPartida(int idPartida, int idAdivinador);
+
+        [OperationContract]
+        bool registrarTurno(int idPartida, Turno turno);
+
+        [OperationContract]
+        Turno recuperarTurno(int idPartida);
+
+        [OperationContract]
+        bool registrarPartidaGanada(int idPartida, int idAdivinador);
+
+        [OperationContract]
+        bool eliminarPartidaPerdidaOAbandonada(int idPartida);
+
+        [OperationContract]
+        String verificarEstadoPartida(int idPartida);
+
+        [OperationContract]
+        List<Partida> obtenerPartidasGanadas(int idJugador);
     }
 }
