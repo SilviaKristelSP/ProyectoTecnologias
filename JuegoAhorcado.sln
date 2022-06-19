@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacionCliente", "AplicacionCliente\AplicacionCliente.csproj", "{5C25171F-9DA6-4720-9A62-0133253AC86E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteMD", "ClienteMD\ClienteMD.csproj", "{B08FC521-02D5-4717-BCF7-528662157753}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60E572EA-BAAB-408B-9749-9179770B6598} = {60E572EA-BAAB-408B-9749-9179770B6598}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

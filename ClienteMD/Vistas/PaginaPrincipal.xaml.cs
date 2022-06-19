@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClienteMD.ServiceReference1;
 
 namespace ClienteMD.Vistas
 {
@@ -19,9 +20,12 @@ namespace ClienteMD.Vistas
     /// </summary>
     public partial class PaginaPrincipal : Window
     {
-        public PaginaPrincipal()
+        Jugador jugador;
+
+        public PaginaPrincipal(Jugador jugadorLogeado)
         {
             InitializeComponent();
+            jugador = jugadorLogeado;
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -41,7 +45,7 @@ namespace ClienteMD.Vistas
 
         private void clickPerfil(object sender, RoutedEventArgs e)
         {
-            Perfil perfil = new Perfil();
+            Perfil perfil = new Perfil(jugador.Id);
             this.Close();
             perfil.Show();
         }

@@ -2,13 +2,18 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
+using ClienteMD.ServiceReference1;
+
 namespace ClienteMD
 {
     public partial class Login : Window
     {
+        Service1Client servicio;
+
         public Login()
         {
             InitializeComponent();
+            servicio = new Service1Client();
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -24,10 +29,36 @@ namespace ClienteMD
             this.Close();
         }
 
-        private void clickIngresar(object sender, RoutedEventArgs e)
+        private async void clickIngresar(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine($"Usuario: {Usuario.Text} Contraseña:{Contraseña.Password}");
-            Boolean camposVacios = false;
+            if (!verificarFormulario())
+            {
+                RespuestaLogin respuesta = await servicio.logearAsync(Usuario.Text, Contraseña.Password);
+                if (respuesta.Error)
+                {
+                    MessageBox.Show(respuesta.Mensaje, "Login fallido");
+                }
+                else
+                {
+                    MessageBox.Show(respuesta.Mensaje, "Login exitoso");
+                    PaginaPrincipal paginaPrincipal = new PaginaPrincipal(respuesta.DatosJugador);
+                    paginaPrincipal.Show();
+                    this.Close();
+                }
+            }
+            
+        }
+
+        private void clickRegistrarse(object sender, RoutedEventArgs e)
+        {
+            RegistroUsuario registroUsuario = new RegistroUsuario();
+            this.Close();
+            registroUsuario.Show();
+        }
+
+        private bool verificarFormulario()
+        {
+            bool camposVacios = false;
             if (Usuario.Text.Equals(""))
             {
                 MessageBox.Show("El nombre de usuario se encuentra vacio, ingresa tu usuario");
@@ -38,19 +69,7 @@ namespace ClienteMD
                 MessageBox.Show("La contraseña se encuentra vacio, ingresa tu contraseña");
                 camposVacios = true;
             }
-            if (camposVacios == false)
-            {
-                PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
-                this.Close();
-                paginaPrincipal.Show();
-            }
-        }
-
-        private void clickRegistrarse(object sender, RoutedEventArgs e)
-        {
-            RegistroUsuario registroUsuario = new RegistroUsuario();
-            this.Close();
-            registroUsuario.Show();
+            return camposVacios;
         }
     }
 }

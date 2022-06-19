@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClienteMD.ServiceReference1;
 
 namespace ClienteMD.Vistas
 {
@@ -19,21 +20,59 @@ namespace ClienteMD.Vistas
     /// </summary>
     public partial class Perfil : Window
     {
-        public Perfil()
+        Service1Client servicio;
+        int idDelJugador;
+
+        public Perfil(int idJugador)
         {
             InitializeComponent();
+            servicio = new Service1Client();
+            idDelJugador = idJugador;
+            mostrarDatosPerfil();
+            cargarPartidasGanadas();
+        }
+
+        private async void mostrarDatosPerfil()
+        {
+            Jugador datosDelPerfil = await servicio.obtenerDatosJugadorAsync(idDelJugador);
+            if(datosDelPerfil != null)
+            {
+                tbCorreo.Text = datosDelPerfil.Email;
+                DateTime fechaAux = Convert.ToDateTime(datosDelPerfil.FechaNacimiento);
+                tbFechaNacimiento.Text = fechaAux.ToString("dd/MM/yyyy");
+                tbTelefono.Text = datosDelPerfil.Telefono;
+                tbNombreCompleto.Text = datosDelPerfil.Nombre;
+                tbPuntajeGlobal.Text = datosDelPerfil.PuntajeGlobal.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Lo sentimos, no fue posible cargar los datos", "Error");
+            }
+        }
+        
+        private async void cargarPartidasGanadas()
+        {
+            Partida[] partidas = await servicio.obtenerPartidasGanadasAsync(idDelJugador);
+            if(partidas.Length > 0)
+            {
+                dgPartidasGanadas.ItemsSource = partidas;
+            }
+            else
+            {
+                dgPartidasGanadas.ItemsSource = null;
+            }
         }
 
         private void clickRegresar(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
             this.Close();
             paginaPrincipal.Show();
         }
 
         private void clickEditarPerfil(object sender, RoutedEventArgs e)
         {
-            EdicionPerfil edicionPerfil = new EdicionPerfil();
+            EdicionPerfil edicionPerfil = new EdicionPerfil(idDelJugador);
             this.Close();
             edicionPerfil.Show();
         }

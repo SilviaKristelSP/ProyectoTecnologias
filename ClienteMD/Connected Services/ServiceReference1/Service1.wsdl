@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:62888/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:62888/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:62888/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioJuegoAhorcado.Modelo.Poco" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_logear_InputMessage">
+    <wsdl:part name="parameters" element="tns:logear" />
+  </wsdl:message>
+  <wsdl:message name="IService1_logear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:logearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_insertarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_insertarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:editarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_comprobarExistenciaCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:comprobarExistenciaCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_comprobarExistenciaCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:comprobarExistenciaCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPuntajeGlobal_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPuntajeGlobal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPuntajeGlobal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPuntajeGlobalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerDatosJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerDatosJugador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerDatosJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerDatosJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerCategorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerCategorias" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerCategorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerCategoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPalabras_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPalabras" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPalabras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPalabrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarPartidasDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarPartidasDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarPartidasDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarPartidasDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarPartidaNueva_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPartidaNueva" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarPartidaNueva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPartidaNuevaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verificarUnionAPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:verificarUnionAPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verificarUnionAPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verificarUnionAPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_unirseAPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:unirseAPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_unirseAPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unirseAPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarPartidaGanada_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPartidaGanada" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarPartidaGanada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPartidaGanadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_eliminarPartidaPerdidaOAbandonada_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarPartidaPerdidaOAbandonada" />
+  </wsdl:message>
+  <wsdl:message name="IService1_eliminarPartidaPerdidaOAbandonada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarPartidaPerdidaOAbandonadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verificarEstadoPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:verificarEstadoPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verificarEstadoPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verificarEstadoPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPartidasGanadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPartidasGanadas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerPartidasGanadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerPartidasGanadasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="logear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/logear" message="tns:IService1_logear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/logearResponse" message="tns:IService1_logear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/insertarJugador" message="tns:IService1_insertarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/insertarJugadorResponse" message="tns:IService1_insertarJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editarJugador" message="tns:IService1_editarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editarJugadorResponse" message="tns:IService1_editarJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="comprobarExistenciaCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/comprobarExistenciaCorreo" message="tns:IService1_comprobarExistenciaCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/comprobarExistenciaCorreoResponse" message="tns:IService1_comprobarExistenciaCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPuntajeGlobal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerPuntajeGlobal" message="tns:IService1_obtenerPuntajeGlobal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerPuntajeGlobalResponse" message="tns:IService1_obtenerPuntajeGlobal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerDatosJugador" message="tns:IService1_obtenerDatosJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerDatosJugadorResponse" message="tns:IService1_obtenerDatosJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCategorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerCategorias" message="tns:IService1_obtenerCategorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerCategoriasResponse" message="tns:IService1_obtenerCategorias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPalabras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerPalabras" message="tns:IService1_obtenerPalabras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerPalabrasResponse" message="tns:IService1_obtenerPalabras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recuperarPartidasDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/recuperarPartidasDisponibles" message="tns:IService1_recuperarPartidasDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/recuperarPartidasDisponiblesResponse" message="tns:IService1_recuperarPartidasDisponibles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarPartidaNueva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/registrarPartidaNueva" message="tns:IService1_registrarPartidaNueva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registrarPartidaNuevaResponse" message="tns:IService1_registrarPartidaNueva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarUnionAPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/verificarUnionAPartida" message="tns:IService1_verificarUnionAPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/verificarUnionAPartidaResponse" message="tns:IService1_verificarUnionAPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unirseAPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/unirseAPartida" message="tns:IService1_unirseAPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/unirseAPartidaResponse" message="tns:IService1_unirseAPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/registrarTurno" message="tns:IService1_registrarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registrarTurnoResponse" message="tns:IService1_registrarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recuperarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/recuperarTurno" message="tns:IService1_recuperarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/recuperarTurnoResponse" message="tns:IService1_recuperarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarPartidaGanada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/registrarPartidaGanada" message="tns:IService1_registrarPartidaGanada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registrarPartidaGanadaResponse" message="tns:IService1_registrarPartidaGanada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPartidaPerdidaOAbandonada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/eliminarPartidaPerdidaOAbandonada" message="tns:IService1_eliminarPartidaPerdidaOAbandonada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/eliminarPartidaPerdidaOAbandonadaResponse" message="tns:IService1_eliminarPartidaPerdidaOAbandonada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarEstadoPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/verificarEstadoPartida" message="tns:IService1_verificarEstadoPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/verificarEstadoPartidaResponse" message="tns:IService1_verificarEstadoPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPartidasGanadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerPartidasGanadas" message="tns:IService1_obtenerPartidasGanadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerPartidasGanadasResponse" message="tns:IService1_obtenerPartidasGanadas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="logear">
+      <soap:operation soapAction="http://tempuri.org/IService1/logear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarJugador">
+      <soap:operation soapAction="http://tempuri.org/IService1/insertarJugador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarJugador">
+      <soap:operation soapAction="http://tempuri.org/IService1/editarJugador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="comprobarExistenciaCorreo">
+      <soap:operation soapAction="http://tempuri.org/IService1/comprobarExistenciaCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPuntajeGlobal">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerPuntajeGlobal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosJugador">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerDatosJugador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCategorias">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerCategorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPalabras">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerPalabras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarPartidasDisponibles">
+      <soap:operation soapAction="http://tempuri.org/IService1/recuperarPartidasDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarPartidaNueva">
+      <soap:operation soapAction="http://tempuri.org/IService1/registrarPartidaNueva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarUnionAPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/verificarUnionAPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unirseAPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/unirseAPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarTurno">
+      <soap:operation soapAction="http://tempuri.org/IService1/registrarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarTurno">
+      <soap:operation soapAction="http://tempuri.org/IService1/recuperarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarPartidaGanada">
+      <soap:operation soapAction="http://tempuri.org/IService1/registrarPartidaGanada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPartidaPerdidaOAbandonada">
+      <soap:operation soapAction="http://tempuri.org/IService1/eliminarPartidaPerdidaOAbandonada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarEstadoPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/verificarEstadoPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPartidasGanadas">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerPartidasGanadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:62888/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

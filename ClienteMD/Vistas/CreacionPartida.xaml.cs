@@ -34,7 +34,7 @@ namespace ClienteMD.Vistas
 
         private void clickRegresar(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
             this.Close();
             paginaPrincipal.Show();
         }
