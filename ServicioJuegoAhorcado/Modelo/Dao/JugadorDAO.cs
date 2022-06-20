@@ -70,14 +70,15 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    string sentencia = "INSERT INTO jugador (nombreCompleto, fechaNacimiento, telefono, password, email) " +
-                                       "VALUES(@nombreCompleto,@fechaNacimiento,@telefono,@password,@email)";
+                    string sentencia = "INSERT INTO jugador (nombreCompleto, fechaNacimiento, telefono, password, email, puntajeGlobal) " +
+                                       "VALUES(@nombreCompleto,@fechaNacimiento,@telefono,@password,@email, @puntajeGlobal)";
                     MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
                     mySqlCommand.Parameters.AddWithValue("@nombreCompleto", jugadorRegistro.Nombre);
                     mySqlCommand.Parameters.AddWithValue("@fechaNacimiento", jugadorRegistro.FechaNacimiento);
                     mySqlCommand.Parameters.AddWithValue("@telefono", jugadorRegistro.Telefono);
                     mySqlCommand.Parameters.AddWithValue("@password", jugadorRegistro.Password);
                     mySqlCommand.Parameters.AddWithValue("@email", jugadorRegistro.Email);
+                    mySqlCommand.Parameters.AddWithValue("@puntajeGlobal", 0);
                     mySqlCommand.Prepare();
                     int filasAfectadas = mySqlCommand.ExecuteNonQuery();
                     if (filasAfectadas > 0)

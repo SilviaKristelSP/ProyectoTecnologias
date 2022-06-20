@@ -64,6 +64,11 @@
                 </StackPanel>
                 <Image Grid.Column="0" Source="/Imagenes/ojos.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="159" />
                 <Image x:Name="PartidaInicio" Visibility="Visible" Grid.Column="1" Source="/Imagenes/partidaInicio.png" />
+                <Image x:Name="Partida1" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida1.png" />
+                <Image x:Name="Partida2" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida2.png" />
+                <Image x:Name="Partida3" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida3.png" />
+                <Image x:Name="Partida4" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida4.png" />
+                <Image x:Name="Partida5" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida5.png" />
                 <Image x:Name="PartidaPerdio" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partidaPerdio.png" />
                 <Image x:Name="PartidaGano" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partidaGano.png" />
 

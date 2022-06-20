@@ -12,6 +12,7 @@
         Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Border Background="#1B2430" CornerRadius="20" MouseDown="moverVentana">
+        
         <Grid Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>

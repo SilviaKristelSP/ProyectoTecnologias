@@ -233,7 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\partidaGano.png" />
-    <Resource Include="Imagenes\partidaInicio.png" />
     <Resource Include="Imagenes\partidaPerdio.png" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +255,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\partida1.png" />
+    <Resource Include="Imagenes\partida2.png" />
+    <Resource Include="Imagenes\partida3.png" />
+    <Resource Include="Imagenes\partida4.png" />
+    <Resource Include="Imagenes\partida5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\partidaInicio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

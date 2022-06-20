@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading.Tasks;
+using ClienteMD.ServiceReference1;
+
 
 namespace ClienteMD.Vistas
 {
@@ -23,12 +25,17 @@ namespace ClienteMD.Vistas
 
         String letra = "";
         int intentos = 6;
-        String palabra = "Aguacate";
+        String palabra = "";
         String[] letrasAdivinadas;
-
-        public PantallaAdivinador()
+        Service1Client servicio;
+        Partida partida;
+        Jugador jugadorAdivinador;
+        public PantallaAdivinador(Partida partidaIniciada, Jugador jugador)
         {
             InitializeComponent();
+            partida = partidaIniciada;
+            servicio = new Service1Client();
+            jugadorAdivinador = jugador;
             inicializarPalabra();
             IntentosRestantes.Text = intentos.ToString();
             
@@ -36,6 +43,7 @@ namespace ClienteMD.Vistas
 
         private void inicializarPalabra()
         {
+            palabra = partida.Palabra;
             palabra= palabra.ToUpper();
             letrasAdivinadas = new String[palabra.Length];
             for (int i = 0; i < palabra.Length; i++)
@@ -44,6 +52,9 @@ namespace ClienteMD.Vistas
                 letrasAdivinadas[i] = "_ ";
             }
             PalabraSecreta.Text = String.Concat(letrasAdivinadas);
+            Pista.Text = partida.Pista;
+            NumeroLetras.Text = palabra.Length.ToString();
+            Categoria.Text = partida.Categoria;
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -56,7 +67,7 @@ namespace ClienteMD.Vistas
 
         private void clickAbandonarPartida(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
             this.Close();
             paginaPrincipal.Show();
         }
@@ -76,11 +87,11 @@ namespace ClienteMD.Vistas
                             if (!aux.Contains("_"))
                             {
                                 PalabraSecreta.Text = String.Concat(letrasAdivinadas);
+                                imagenGano();
                                 await Task.Delay(1000);
                                 MessageBox.Show("Felicidades, haz ganado 10 pts :)", "Partida ganada");
-                                PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
-                                paginaPrincipal.Show();
-                                this.Close();
+                                guardarPartidaGanada();                                
+                                
                             }
                         }
                     }
@@ -88,20 +99,81 @@ namespace ClienteMD.Vistas
                 else
                 {
                     intentos--;
+                    ocultarImagenes();
                     IntentosRestantes.Text = intentos.ToString();
+                    if(intentos == 0)
+                    {
+                        MessageBox.Show("Lo sentimos, parece que perdiste ;(", "Partida perdida");
+                        PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
+                        paginaPrincipal.Show();
+                        this.Close();
+                    }
                 }
                 PalabraSecreta.Text = String.Concat(letrasAdivinadas);
             }
+            
+        }
+
+        private void imagenGano()
+        {
+            PartidaInicio.Visibility = Visibility.Hidden;
+            Partida1.Visibility = Visibility.Hidden;
+            Partida2.Visibility = Visibility.Hidden;
+            Partida3.Visibility = Visibility.Hidden;
+            Partida4.Visibility = Visibility.Hidden;
+            Partida5.Visibility = Visibility.Hidden;
+            PartidaPerdio.Visibility = Visibility.Hidden;
+            PartidaGano.Visibility = Visibility.Visible;
+        }
+
+        private void ocultarImagenes()
+        {
+            switch (intentos)
+            {
+                case 5:
+                    PartidaInicio.Visibility = Visibility.Hidden;
+                    Partida1.Visibility = Visibility.Visible;
+                    break;
+                case 4:
+                    Partida1.Visibility = Visibility.Hidden;
+                    Partida2.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    Partida2.Visibility = Visibility.Hidden;
+                    Partida3.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    Partida3.Visibility = Visibility.Hidden;
+                    Partida4.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    Partida4.Visibility = Visibility.Hidden;
+                    Partida5.Visibility = Visibility.Visible;
+                    break;
+                case 0:
+                    Partida5.Visibility = Visibility.Hidden;
+                    PartidaPerdio.Visibility = Visibility.Visible;
+                    break;
+
+            }
+        }
+
+        private async void guardarPartidaGanada()
+        {
+            if (await servicio.registrarPartidaGanadaAsync(partida.IdPartida, jugadorAdivinador.Id))
+            {
+                PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
+                paginaPrincipal.Show();
+                this.Close();
+            }
             else
             {
-                MessageBox.Show("Lo sentimos, parece que perdiste ;(", "Partida perdida");
-                PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
+                MessageBox.Show("Lo sentimos, parece que hubo un error al registrar la partida ;(", "Error");
+                PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
                 paginaPrincipal.Show();
                 this.Close();
             }
         }
-
-
         private void clickA(object sender, RoutedEventArgs e)
         {
             verificarTurno('A');

@@ -31,9 +31,13 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
-                        <StackPanel Margin="0 25 0 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Margin="0 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Roboto">Pista:</TextBlock>
-                            <TextBlock x:Name="Pista" Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Center" FontFamily="Roboto" TextWrapping="Wrap">Ejemplo Pista</TextBlock>
+                        <StackPanel Margin="120 0 0 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Foreground="#D6D5A8" FontSize="15" FontWeight="Bold" FontFamily="Roboto"><Run Text="Pista:"/></TextBlock>
+                            <TextBlock x:Name="Pista" Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Center" FontFamily="Roboto" TextWrapping="Wrap"><Run Text="Ejemplo Pista"/></TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="-82 20 0 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Foreground="#D6D5A8" FontSize="15" FontWeight="Bold" FontFamily="Roboto"><Run Text="Categoria:"/></TextBlock>
+                            <TextBlock x:Name="Categoria" Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Center" FontFamily="Roboto" TextWrapping="Wrap"><Run Text="Ejemplo Categoria"/></TextBlock>
                         </StackPanel>
                     </StackPanel>
                     <Image Grid.Column="1" Source="/Imagenes/luz.png" />
@@ -54,6 +58,11 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Image x:Name="PartidaInicio" Visibility="Visible" Grid.Column="1" Source="/Imagenes/partidaInicio.png" />
+                <Image x:Name="Partida1" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida1.png" />
+                <Image x:Name="Partida2" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida2.png" />
+                <Image x:Name="Partida3" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida3.png" />
+                <Image x:Name="Partida4" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida4.png" />
+                <Image x:Name="Partida5" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida5.png" />
                 <Image x:Name="PartidaPerdio" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partidaPerdio.png" />
                 <Image x:Name="PartidaGano" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partidaGano.png" />
 
