@@ -87,6 +87,13 @@ namespace ClienteMD.Vistas
                     }
                     
                     ocultarImagenes();
+                    if(numeroRepeticiones == 1)
+                    {
+                        actualizador.Stop();
+                        MessageBox.Show("Partida finalizada", "Perdiste");
+                        imagenGano();
+                        cerrarVentana();
+                    }
                 }
                 else if(estadoGanador != 0)
                 {
@@ -97,12 +104,7 @@ namespace ClienteMD.Vistas
                         MessageBox.Show("La partida fue abandonada por el adivinador");
                         cerrarVentana();
                     }
-                    else if (estadoGanador == 1)
-                    {
-                        MessageBox.Show("El adivinador logró acertar la palabra", "Perdiste");
-                        imagenGano();
-                        cerrarVentana();
-                    }
+                  
                 }
             }catch (Exception ex)
             {

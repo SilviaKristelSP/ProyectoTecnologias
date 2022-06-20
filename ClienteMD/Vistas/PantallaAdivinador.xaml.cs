@@ -142,8 +142,10 @@ namespace ClienteMD.Vistas
                             {
                                 PalabraSecreta.Text = String.Concat(letrasAdivinadas);
                                 imagenGano();
+                                actualizador.Stop();
                                 await Task.Delay(1000);
                                 MessageBox.Show("Felicidades, haz ganado 10 pts :)", "Partida ganada");
+
                                 guardarPartidaGanada();                                
                                 
                             }
