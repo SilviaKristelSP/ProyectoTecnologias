@@ -90,7 +90,7 @@ namespace ClienteMD.Vistas
                     if(numeroRepeticiones == 1)
                     {
                         actualizador.Stop();
-                        MessageBox.Show("Partida finalizada", "Perdiste");
+                        MessageBox.Show("Partida finalizada", "Partida finalizada");
                         imagenGano();
                         cerrarVentana();
                     }
@@ -101,7 +101,7 @@ namespace ClienteMD.Vistas
                     if (estadoGanador == -1)
                     {
                         
-                        MessageBox.Show("La partida fue abandonada por el adivinador");
+                        MessageBox.Show("La partida fue abandonada o perdida");
                         cerrarVentana();
                     }
                   

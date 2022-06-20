@@ -113,6 +113,7 @@ namespace ClienteMD.Vistas
 
             if (confirmacionEliminacion == MessageBoxResult.Yes)
             {
+                actualizador.Stop();
                 bool partidaAbandonada = await servicio.eliminarPartidaPerdidaOAbandonadaAsync(partida.IdPartida);
                 PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
                 this.Close();
@@ -162,10 +163,19 @@ namespace ClienteMD.Vistas
                     servicio.registrarTurno(partida.IdPartida, turnoEfectuado);
                     if (intentos == 0)
                     {
-                        MessageBox.Show("Lo sentimos, parece que perdiste ;(", "Partida perdida");
-                        PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
-                        paginaPrincipal.Show();
-                        this.Close();
+                        bool partidaAbandonada = await servicio.eliminarPartidaPerdidaOAbandonadaAsync(partida.IdPartida);
+                        if (partidaAbandonada)
+                        {
+                            actualizador.Stop();
+                            MessageBox.Show("Lo sentimos, parece que perdiste ;(", "Partida perdida");
+                            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
+                            paginaPrincipal.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
                     }
                 }
                 PalabraSecreta.Text = String.Concat(letrasAdivinadas);
