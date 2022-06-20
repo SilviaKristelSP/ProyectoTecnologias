@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClienteMD.ServiceReference1;
-using System.Windows.Threading;
+
 
 namespace ClienteMD.Vistas
 {
@@ -23,18 +23,20 @@ namespace ClienteMD.Vistas
     {
         Jugador jugador;
         Service1Client servicio;
-        DispatcherTimer dispachadorDeTiempo;
-
+        
         public PaginaPrincipal(Jugador jugadorLogeado)
         {
             InitializeComponent();
             jugador = jugadorLogeado;
             servicio = new Service1Client();
+            mostrarPartidasDisponibles();
         }
 
-        private void mostrarPartidasDisponibles()
+        private async void mostrarPartidasDisponibles()
         {
-            
+            Partida[] partidas = await servicio.recuperarPartidasDisponiblesAsync();
+            partidasDisponibles.ItemsSource = null;
+            partidasDisponibles.ItemsSource = partidas;
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -59,18 +61,55 @@ namespace ClienteMD.Vistas
             perfil.Show();
         }
 
-        private void clickEntrarPartida(object sender, RoutedEventArgs e)
+        private async void clickEntrarPartida(object sender, RoutedEventArgs e)
         {
-            PantallaAdivinador pantallaAdivinador = new PantallaAdivinador();
-            this.Close();
-            pantallaAdivinador.Show();
+            Partida partidaSeleccionada = (Partida)partidasDisponibles.SelectedItem;
+            if (partidaSeleccionada != null)
+            {
+                String estadoPartida = await servicio.verificarEstadoPartidaAsync(partidaSeleccionada.IdPartida);
+                if (estadoPartida.Equals("En Espera"))
+                {
+                    bool unirseAPartida = false;
+                    unirseAPartida = await servicio.unirseAPartidaAsync(partidaSeleccionada.IdPartida, jugador.Id);
+                    if (unirseAPartida)
+                    {
+                        PantallaAdivinador pantallaAdivinador = new PantallaAdivinador(partidaSeleccionada, jugador);
+                        pantallaAdivinador.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al unirse en la partida", "Error en la partida");
+                        mostrarPartidasDisponibles();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Partida iniciada, selecciona otra partida", "Error en la partida");
+                    mostrarPartidasDisponibles();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una partida de la lista", "Partida invalida");
+                mostrarPartidasDisponibles();
+            }
+            
         }
+
+
 
         private void clickCrearPartida(object sender, RoutedEventArgs e)
         {
             CreacionPartida creacionPartida = new CreacionPartida(jugador);
             this.Close();
             creacionPartida.Show();
+        }
+
+        private void clickRecargarPartida(object sender, RoutedEventArgs e)
+        {
+            mostrarPartidasDisponibles();
         }
     }
 }

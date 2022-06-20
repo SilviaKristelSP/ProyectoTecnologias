@@ -12,6 +12,7 @@
         Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Border Background="#1B2430" CornerRadius="20" MouseDown="moverVentana">
+        
         <Grid Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
@@ -70,7 +71,28 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1">
                     <TextBlock Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Partidas disponibles:</TextBlock>
-                    <Button Content="Entrar a partida" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickEntrarPartida" Margin="466 0 0 0">
+                    <Button Content="Recargar partidas" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickRecargarPartida" Margin="130 0 0 0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>
+                                <Setter Property="Background" Value="#816797"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#51557E"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="120" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="Entrar a partida" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Click="clickEntrarPartida" Margin="210 0 0 0">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="TextElement.FontFamily" Value="Fuentes/#Roboto"></Setter>

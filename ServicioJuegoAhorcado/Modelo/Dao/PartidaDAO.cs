@@ -18,12 +18,13 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    String consulta = "SELECT partida.idPartida, palabra.palabra, palabra.pista, palabra.categoria, " +
+                    String consulta = "SELECT partida.idPartida, palabra.palabra, palabra.pista, categoria.nombreCategoria, " +
                                       "jugador.nombreCompleto, jugador.email, partida.fecha " +
                                       "FROM partida INNER JOIN jugador ON " +
                                       "partida.retador = jugador.idJugador INNER JOIN palabra ON " +
-                                      "partida.palabraAdivinada = palabra.idPalabra WHERE " +
-                                      "partida.estadoPartida = @estadoPartida ";
+                                      "partida.palabraAdivinada = palabra.idPalabra " +
+                                      "INNER JOIN categoria ON palabra.categoria = categoria.idcategoria " +
+                                      "WHERE partida.estadoPartida = @estadoPartida ";
                     MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
                     mySqlCommand.Parameters.AddWithValue("@estadoPartida", "En Espera");
                     MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
@@ -127,24 +128,17 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    String consulta = "SELECT * FROM partida WHERE partida.estadoPartida = @estadoPartida";
-                    MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
-                    mySqlCommand.Parameters.AddWithValue("@estadoPartida", "En Espera");
-                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
-                    if (respuesta.Read())
+                    String sentencia = "UPDATE partida SET estadoPartida = @estadoPartida, adivinador = @idAdivinador " +
+                                           "WHERE idpartida = @idPartida";
+                    MySqlCommand mySqlCommand2 = new MySqlCommand(sentencia, conexionBD);
+                    mySqlCommand2.Parameters.AddWithValue("@estadoPartida", "Iniciada");
+                    mySqlCommand2.Parameters.AddWithValue("@idAdivinador", idAdivinador);
+                    mySqlCommand2.Parameters.AddWithValue("@idPartida", idPartida);
+                    mySqlCommand2.Prepare();
+                    int respuesta2 = mySqlCommand2.ExecuteNonQuery();
+                    if (respuesta2 > 0)
                     {
-                        String sentencia = "UPDATE partida SET estadoPartida = @estadoPartida, adivinador = @idAdivinador " +
-                                       "WHERE idpartida = @idPartida";
-                        MySqlCommand mySqlCommand2 = new MySqlCommand(sentencia, conexionBD);
-                        mySqlCommand2.Parameters.AddWithValue("@estadoPartida", "Iniciada");
-                        mySqlCommand2.Parameters.AddWithValue("@idAdivinador", idAdivinador);
-                        mySqlCommand2.Parameters.AddWithValue("@idPartida", idPartida);
-                        mySqlCommand2.Prepare();
-                        int respuesta2 = mySqlCommand2.ExecuteNonQuery();
-                        if (respuesta2 > 0)
-                        {
-                            resultadoInsercion = true;
-                        }
+                        resultadoInsercion = true;
                     }
                 }
                 catch (Exception e)

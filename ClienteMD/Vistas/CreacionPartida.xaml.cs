@@ -44,7 +44,7 @@ namespace ClienteMD.Vistas
 
         private void clickRegresar(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(null);
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(retador);
             this.Close();
             paginaPrincipal.Show();
         }
@@ -53,10 +53,11 @@ namespace ClienteMD.Vistas
         {
             if(Palabra.SelectedIndex > -1)
             {
-                int idPartidaCreada = await servicio.registrarPartidaNuevaAsync(crearPartida());
+                Partida partida = crearPartida();
+                int idPartidaCreada = await servicio.registrarPartidaNuevaAsync(partida);
                 if(idPartidaCreada > -1)
                 {
-                    PantallaRetador pantallaRetador = new PantallaRetador(); //Debería mandar el idPartidaCreada
+                    PantallaRetador pantallaRetador = new PantallaRetador(partida, retador); 
                     MessageBox.Show("Tú partida fue generada con éxito", "Nueva Partida Creada");
                     pantallaRetador.Show();
                     this.Close();
@@ -79,9 +80,13 @@ namespace ClienteMD.Vistas
             partidaNueva.Fecha = DateTime.Now;
             
             Palabra palabra = (Palabra)Palabra.SelectedItem;
+            
             int idSeleccionada = palabra.IdPalabra;
 
             partidaNueva.IdPalabra = idSeleccionada;
+            partidaNueva.Palabra = palabra.PalabraSecreta;
+            partidaNueva.Categoria = Categoria.SelectedItem.ToString();
+            partidaNueva.Pista = palabra.Pista;
 
             return partidaNueva;
         }
