@@ -74,6 +74,7 @@ namespace ClienteMD.Vistas
         
         private async void verificarTurno (Char letra)
         {
+            Turno turnoEfectuado = new Turno();
             if (intentos > 0)
             {
                 if (palabra.Contains(letra))
@@ -84,6 +85,10 @@ namespace ClienteMD.Vistas
                         {
                             letrasAdivinadas[i] = letra.ToString();
                             string aux = String.Concat(letrasAdivinadas);
+
+                            turnoEfectuado.Letra = $"{letra}";
+                            turnoEfectuado.IntentosRestantes = intentos;
+                            servicio.registrarTurno(partida.IdPartida, turnoEfectuado);
                             if (!aux.Contains("_"))
                             {
                                 PalabraSecreta.Text = String.Concat(letrasAdivinadas);
@@ -101,7 +106,10 @@ namespace ClienteMD.Vistas
                     intentos--;
                     ocultarImagenes();
                     IntentosRestantes.Text = intentos.ToString();
-                    if(intentos == 0)
+                    turnoEfectuado.Letra = $"{letra}";
+                    turnoEfectuado.IntentosRestantes = intentos;
+                    servicio.registrarTurno(partida.IdPartida, turnoEfectuado);
+                    if (intentos == 0)
                     {
                         MessageBox.Show("Lo sentimos, parece que perdiste ;(", "Partida perdida");
                         PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);

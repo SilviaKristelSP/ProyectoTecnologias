@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClienteMD.ServiceReference1;
+using System.Windows.Threading;
 
 namespace ClienteMD.Vistas
 {
@@ -24,6 +25,9 @@ namespace ClienteMD.Vistas
         Jugador retador;
         Service1Client service1;
         int intentosRestantes = 6;
+        DispatcherTimer actualizador;
+        int idPartida;
+
         public PantallaRetador(Partida partida, Jugador jugador)
         {
             InitializeComponent();
@@ -34,6 +38,25 @@ namespace ClienteMD.Vistas
             NumeroLetras.Text = partida.Palabra.Length.ToString();
             PalabraSecreta.Text = partida.Palabra;
             IntentosRestantes.Text = intentosRestantes.ToString();
+            idPartida = partida.IdPartida;
+
+            actualizador = new DispatcherTimer();
+            actualizador.Interval = new TimeSpan(0, 0, 0, 10);
+            actualizador.Tick += (a, b) =>
+            {
+                actualizarDatos();
+            };
+            actualizador.Start();
+        }
+
+        private void actualizarDatos()
+        {
+            Console.WriteLine();
+            Turno turno = service1.recuperarTurno(idPartida);
+            LetraElegida.Text = turno.Letra;
+            intentosRestantes = turno.IntentosRestantes;
+            IntentosRestantes.Text = turno.IntentosRestantes.ToString();
+            ocultarImagenes();
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
