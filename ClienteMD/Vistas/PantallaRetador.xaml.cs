@@ -90,12 +90,6 @@ namespace ClienteMD.Vistas
 
         private async void clickAbandonarPartida(object sender, RoutedEventArgs e)
         {
-            /*for(int i = 0; i < intentosRestantes; i++)
-            {
-                intentosRestantes--;
-                ocultarImagenes();
-                await Task.Delay(3500);
-            }*/
             PaginaPrincipal paginaPrincipal = new PaginaPrincipal(retador);
             this.Close();
             paginaPrincipal.Show();
