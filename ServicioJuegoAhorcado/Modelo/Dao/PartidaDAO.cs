@@ -64,14 +64,16 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             {
                 try
                 {
-                    String sentencia = "INSERT INTO partida (ganador, retador, fecha, palabraAdivinada, estadoPartida)" +
-                                       "VALUES (@ganador, @idRetador, @fecha, @idPalabra, @estadoPartida)";
+                    String sentencia = "INSERT INTO partida (ganador, retador, fecha, palabraAdivinada, estadoPartida, letraAdvinador, intentosRestantes) " +
+                                       "VALUES (@ganador, @idRetador, @fecha, @idPalabra, @estadoPartida, @letraAdivinador, @intentosRestantes)";
                     MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
                     mySqlCommand.Parameters.AddWithValue("@ganador", 0);
                     mySqlCommand.Parameters.AddWithValue("@idRetador", partidaNueva.IdRetador);
                     mySqlCommand.Parameters.AddWithValue("@fecha", partidaNueva.Fecha);
                     mySqlCommand.Parameters.AddWithValue("@idPalabra", partidaNueva.IdPalabra);
                     mySqlCommand.Parameters.AddWithValue("@estadoPartida", "En Espera");
+                    mySqlCommand.Parameters.AddWithValue("@letraAdivinador", "");
+                    mySqlCommand.Parameters.AddWithValue("@intentosRestantes", 6);
                     mySqlCommand.Prepare();
                     int filasAfectadas = mySqlCommand.ExecuteNonQuery();
                     if (filasAfectadas > 0)
@@ -99,7 +101,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
         {
             String nombreAdivinador = "Sin Adivinador";
             MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
-            if(conexionBD != null)
+            if (conexionBD != null)
             {
                 try
                 {
@@ -149,6 +151,35 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             return resultadoInsercion;
         }
 
+
+        public static string recuperarNombreAdivinador(int idPartida)
+        {
+            String adivinador = "";
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+            if (conexionBD != null)
+            {
+                try
+                {
+                    String consulta = "SELECT jugador.nombreCompleto FROM partida INNER JOIN jugador ON partida.adivinador = jugador.idJugador " +
+                                        "WHERE partida.idPartida = @idPartida";
+                    MySqlCommand mySqlCommand = new MySqlCommand(consulta, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@idPartida", idPartida);
+                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                    if (respuesta.Read())
+                    {
+                        adivinador = ((respuesta.IsDBNull(0)) ? "" : respuesta.GetString(0));
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            return adivinador;
+        } 
+
         public static bool registrarTurno(int idPartida, Turno turno)
         {
             bool resultadoInsercion = false;
@@ -177,6 +208,34 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
             }
             return resultadoInsercion;
         }
+
+        public static int recuperarEstadoGanador(int idPartida)
+        {
+            int ganador = -1;
+            MySqlConnection conexionBD = ConnectionUtil.obtenerConexion();
+            if (conexionBD != null)
+            {
+                try
+                {
+                    String sentencia = "SELECT partida.ganador FROM partida WHERE partida.idPartida = @idPartida";
+                    MySqlCommand mySqlCommand = new MySqlCommand(sentencia, conexionBD);
+                    mySqlCommand.Parameters.AddWithValue("@idPartida", idPartida);
+                    MySqlDataReader respuesta = mySqlCommand.ExecuteReader();
+                    if (respuesta.Read())
+                    {
+                        ganador = ((respuesta.IsDBNull(0)) ? -1 : respuesta.GetInt32(0));
+                    }
+                    
+                }
+                catch (Exception e)
+                {
+                  
+                }
+            }
+           
+            return ganador;
+        }
+
 
         public static Turno recuperarTurno(int idPartida)
         {
@@ -254,6 +313,7 @@ namespace ServicioJuegoAhorcado.Modelo.Dao
 
             return resultadoInsercion;
         }
+
 
         public static bool eliminarPartidaPerdidaOAbandonada(int idPartida)
         {

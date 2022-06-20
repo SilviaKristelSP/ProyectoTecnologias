@@ -62,7 +62,7 @@
                     <TextBlock Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Roboto">Adivinador:</TextBlock>
                     <TextBlock TextWrapping="Wrap" x:Name="NombreUsuario" Margin="10 0 0 0" Foreground="#D6D5A8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Center" FontFamily="Roboto">Ejemplo Adivinador</TextBlock>
                 </StackPanel>
-                <Image Grid.Column="0" Source="/Imagenes/ojos.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="159" />
+                <Image Grid.Column="0" Source="/Imagenes/ojos.png" Width="159" Margin="70,104,70,-105" />
                 <Image x:Name="PartidaInicio" Visibility="Visible" Grid.Column="1" Source="/Imagenes/partidaInicio.png" />
                 <Image x:Name="Partida1" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida1.png" />
                 <Image x:Name="Partida2" Visibility="Hidden" Grid.Column="1" Source="/Imagenes/partida2.png" />

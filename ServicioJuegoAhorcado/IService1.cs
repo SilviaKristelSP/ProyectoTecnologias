@@ -66,5 +66,11 @@ namespace ServicioJuegoAhorcado
 
         [OperationContract]
         List<Partida> obtenerPartidasGanadas(int idJugador);
+
+        [OperationContract]
+        String recuperarNombreAdivinador(int idPartida);
+
+        [OperationContract]
+        int recuperarEstadoGanador(int idPartida);
     }
 }

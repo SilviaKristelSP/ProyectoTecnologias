@@ -27,6 +27,8 @@ namespace ClienteMD.Vistas
         int intentosRestantes = 6;
         DispatcherTimer actualizador;
         int idPartida;
+        int numeroRepeticiones = 0;
+   
 
         public PantallaRetador(Partida partida, Jugador jugador)
         {
@@ -39,9 +41,18 @@ namespace ClienteMD.Vistas
             PalabraSecreta.Text = partida.Palabra;
             IntentosRestantes.Text = intentosRestantes.ToString();
             idPartida = partida.IdPartida;
+            NombreUsuario.Text = "";
+            actualizarTurnos();
+            
+            
+        }
 
+       
+
+        private void actualizarTurnos()
+        {
             actualizador = new DispatcherTimer();
-            actualizador.Interval = new TimeSpan(0, 0, 0, 10);
+            actualizador.Interval = new TimeSpan(0, 0, 0, 3);
             actualizador.Tick += (a, b) =>
             {
                 actualizarDatos();
@@ -49,14 +60,55 @@ namespace ClienteMD.Vistas
             actualizador.Start();
         }
 
-        private void actualizarDatos()
+        
+        private async void actualizarDatos()
         {
-            Console.WriteLine();
-            Turno turno = service1.recuperarTurno(idPartida);
-            LetraElegida.Text = turno.Letra;
-            intentosRestantes = turno.IntentosRestantes;
-            IntentosRestantes.Text = turno.IntentosRestantes.ToString();
-            ocultarImagenes();
+            
+            try
+            {
+                Turno turno = await service1.recuperarTurnoAsync(idPartida);
+                int estadoGanador = await service1.recuperarEstadoGanadorAsync(idPartida);
+                if (turno != null)
+                {
+                    
+                
+                    LetraElegida.Text = turno.Letra;
+                    intentosRestantes = turno.IntentosRestantes;
+                    IntentosRestantes.Text = turno.IntentosRestantes.ToString();
+                    if (numeroRepeticiones == 0)
+                    {
+                        String resultado = await service1.recuperarNombreAdivinadorAsync(idPartida);
+                        
+                        if (!resultado.Equals(""))
+                        {
+                            NombreUsuario.Text = resultado;
+                            numeroRepeticiones = 1;
+                        }
+                    }
+                    
+                    ocultarImagenes();
+                }
+                else if(estadoGanador != 0)
+                {
+                    actualizador.Stop();
+                    if (estadoGanador == -1)
+                    {
+                        
+                        MessageBox.Show("La partida fue abandonada por el adivinador");
+                        cerrarVentana();
+                    }
+                    else if (estadoGanador == 1)
+                    {
+                        MessageBox.Show("El adivinador logró acertar la palabra", "Perdiste");
+                        imagenGano();
+                        cerrarVentana();
+                    }
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine("Error al recuperar");
+            }
+            
         }
 
         private void moverVentana(object sender, MouseButtonEventArgs e)
@@ -110,12 +162,33 @@ namespace ClienteMD.Vistas
 
             }
         }
-
+        private void cerrarVentana()
+        {
+            actualizador.Stop();
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(retador);
+            paginaPrincipal.Show();
+            this.Close();
+        }
         private async void clickAbandonarPartida(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(retador);
-            this.Close();
-            paginaPrincipal.Show();
+            var confirmacionEliminacion = MessageBox.Show("¿Realmente quiere abandonar la partida?",
+                "Confirmación", MessageBoxButton.YesNo);
+
+            if (confirmacionEliminacion == MessageBoxResult.Yes)
+            {
+                if (await service1.eliminarPartidaPerdidaOAbandonadaAsync(idPartida))
+                {
+                    
+                    MessageBox.Show("Partida abandonada", "Abandonar partida");
+                    cerrarVentana();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Error");
+                    cerrarVentana();
+                }
+
+            } 
         }
     }
 }
