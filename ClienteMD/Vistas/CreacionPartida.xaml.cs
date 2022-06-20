@@ -57,7 +57,8 @@ namespace ClienteMD.Vistas
                 int idPartidaCreada = await servicio.registrarPartidaNuevaAsync(partida);
                 if(idPartidaCreada > -1)
                 {
-                    PantallaRetador pantallaRetador = new PantallaRetador(partida, retador); 
+                    partida.IdPartida = idPartidaCreada;
+                    PantallaRetador pantallaRetador = new PantallaRetador(partida, retador);
                     MessageBox.Show("Tú partida fue generada con éxito", "Nueva Partida Creada");
                     pantallaRetador.Show();
                     this.Close();
@@ -85,7 +86,8 @@ namespace ClienteMD.Vistas
 
             partidaNueva.IdPalabra = idSeleccionada;
             partidaNueva.Palabra = palabra.PalabraSecreta;
-            partidaNueva.Categoria = Categoria.SelectedItem.ToString();
+            Categoria categoria = (Categoria)Categoria.SelectedItem;
+            partidaNueva.Categoria = categoria.NombreCategoria;
             partidaNueva.Pista = palabra.Pista;
 
             return partidaNueva;

@@ -855,6 +855,18 @@ namespace ClienteMD.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/obtenerPartidasGanadas", ReplyAction="http://tempuri.org/IService1/obtenerPartidasGanadasResponse")]
         System.Threading.Tasks.Task<ClienteMD.ServiceReference1.Partida[]> obtenerPartidasGanadasAsync(int idJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recuperarNombreAdivinador", ReplyAction="http://tempuri.org/IService1/recuperarNombreAdivinadorResponse")]
+        string recuperarNombreAdivinador(int idPartida);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recuperarNombreAdivinador", ReplyAction="http://tempuri.org/IService1/recuperarNombreAdivinadorResponse")]
+        System.Threading.Tasks.Task<string> recuperarNombreAdivinadorAsync(int idPartida);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recuperarEstadoGanador", ReplyAction="http://tempuri.org/IService1/recuperarEstadoGanadorResponse")]
+        int recuperarEstadoGanador(int idPartida);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recuperarEstadoGanador", ReplyAction="http://tempuri.org/IService1/recuperarEstadoGanadorResponse")]
+        System.Threading.Tasks.Task<int> recuperarEstadoGanadorAsync(int idPartida);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1026,6 +1038,22 @@ namespace ClienteMD.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ClienteMD.ServiceReference1.Partida[]> obtenerPartidasGanadasAsync(int idJugador) {
             return base.Channel.obtenerPartidasGanadasAsync(idJugador);
+        }
+        
+        public string recuperarNombreAdivinador(int idPartida) {
+            return base.Channel.recuperarNombreAdivinador(idPartida);
+        }
+        
+        public System.Threading.Tasks.Task<string> recuperarNombreAdivinadorAsync(int idPartida) {
+            return base.Channel.recuperarNombreAdivinadorAsync(idPartida);
+        }
+        
+        public int recuperarEstadoGanador(int idPartida) {
+            return base.Channel.recuperarEstadoGanador(idPartida);
+        }
+        
+        public System.Threading.Tasks.Task<int> recuperarEstadoGanadorAsync(int idPartida) {
+            return base.Channel.recuperarEstadoGanadorAsync(idPartida);
         }
     }
 }

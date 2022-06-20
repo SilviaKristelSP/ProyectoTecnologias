@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading.Tasks;
 using ClienteMD.ServiceReference1;
+using System.Windows.Threading;
 
 
 namespace ClienteMD.Vistas
@@ -30,6 +31,7 @@ namespace ClienteMD.Vistas
         Service1Client servicio;
         Partida partida;
         Jugador jugadorAdivinador;
+        DispatcherTimer actualizador;
         public PantallaAdivinador(Partida partidaIniciada, Jugador jugador)
         {
             InitializeComponent();
@@ -37,8 +39,47 @@ namespace ClienteMD.Vistas
             servicio = new Service1Client();
             jugadorAdivinador = jugador;
             inicializarPalabra();
+            verificarRetador();
             IntentosRestantes.Text = intentos.ToString();
             
+        }
+        private void verificarRetador()
+        {
+            actualizador = new DispatcherTimer();
+            actualizador.Interval = new TimeSpan(0, 0, 0, 5);
+            actualizador.Tick += (a, b) =>
+            {
+                actualizarDatos();
+            };
+            actualizador.Start();
+        }
+        private async void actualizarDatos()
+        {
+
+            try
+            {
+                String estado = await servicio.verificarEstadoPartidaAsync(partida.IdPartida);
+                if (estado.Equals("Eliminada o Abandonada"))
+                {
+                    actualizador.Stop();
+                    MessageBox.Show("La partida fue abandonada por el retador");
+                    cerrarVentana();
+                 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al recuperar");
+            }
+
+        }
+
+        private void cerrarVentana()
+        {
+            actualizador.Stop();
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
+            paginaPrincipal.Show();
+            this.Close();
         }
 
         private void inicializarPalabra()
@@ -65,11 +106,19 @@ namespace ClienteMD.Vistas
             }
         }
 
-        private void clickAbandonarPartida(object sender, RoutedEventArgs e)
+        private async void clickAbandonarPartida(object sender, RoutedEventArgs e)
         {
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
-            this.Close();
-            paginaPrincipal.Show();
+            var confirmacionEliminacion = MessageBox.Show("¿Realmente quiere abandonar la partida?",
+                "Confirmación", MessageBoxButton.YesNo);
+
+            if (confirmacionEliminacion == MessageBoxResult.Yes)
+            {
+                bool partidaAbandonada = await servicio.eliminarPartidaPerdidaOAbandonadaAsync(partida.IdPartida);
+                PaginaPrincipal paginaPrincipal = new PaginaPrincipal(jugadorAdivinador);
+                this.Close();
+                paginaPrincipal.Show();
+            }
+            
         }
         
         private async void verificarTurno (Char letra)

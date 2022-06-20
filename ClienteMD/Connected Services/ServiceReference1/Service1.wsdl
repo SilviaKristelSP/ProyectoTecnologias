@@ -115,6 +115,18 @@
   <wsdl:message name="IService1_obtenerPartidasGanadas_OutputMessage">
     <wsdl:part name="parameters" element="tns:obtenerPartidasGanadasResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_recuperarNombreAdivinador_InputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarNombreAdivinador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarNombreAdivinador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarNombreAdivinadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarEstadoGanador_InputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarEstadoGanador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_recuperarEstadoGanador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recuperarEstadoGanadorResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="logear">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/logear" message="tns:IService1_logear_InputMessage" />
@@ -187,6 +199,14 @@
     <wsdl:operation name="obtenerPartidasGanadas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerPartidasGanadas" message="tns:IService1_obtenerPartidasGanadas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerPartidasGanadasResponse" message="tns:IService1_obtenerPartidasGanadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recuperarNombreAdivinador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/recuperarNombreAdivinador" message="tns:IService1_recuperarNombreAdivinador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/recuperarNombreAdivinadorResponse" message="tns:IService1_recuperarNombreAdivinador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recuperarEstadoGanador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/recuperarEstadoGanador" message="tns:IService1_recuperarEstadoGanador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/recuperarEstadoGanadorResponse" message="tns:IService1_recuperarEstadoGanador_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -346,6 +366,24 @@
     </wsdl:operation>
     <wsdl:operation name="obtenerPartidasGanadas">
       <soap:operation soapAction="http://tempuri.org/IService1/obtenerPartidasGanadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarNombreAdivinador">
+      <soap:operation soapAction="http://tempuri.org/IService1/recuperarNombreAdivinador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarEstadoGanador">
+      <soap:operation soapAction="http://tempuri.org/IService1/recuperarEstadoGanador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

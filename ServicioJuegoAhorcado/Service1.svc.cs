@@ -52,7 +52,14 @@ namespace ServicioJuegoAhorcado
             return PalabraDAO.obtenerPalabras();
         }
 
+
         //PARTIDA
+
+        public String recuperarNombreAdivinador(int idPartida)
+        {
+            return PartidaDAO.recuperarNombreAdivinador(idPartida);
+        }
+
         public List<Partida> recuperarPartidasDisponibles()
         {
             return PartidaDAO.recuperarPartidasDisponibles();
@@ -101,6 +108,11 @@ namespace ServicioJuegoAhorcado
         public List<Partida> obtenerPartidasGanadas(int idJugador)
         {
             return PartidaDAO.obtenerPartidasGanadas(idJugador);
+        }
+
+        public  int recuperarEstadoGanador(int idPartida)
+        {
+            return PartidaDAO.recuperarEstadoGanador(idPartida);
         }
 
     }
